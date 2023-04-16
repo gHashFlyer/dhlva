@@ -1,38 +1,104 @@
-.App {
+:root{
+  --header-bgcolor: rgba(2, 32, 68, 0.85);
+  --menu-color: rgba(48, 53, 85, 0.85);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(115, 126, 96);
+
+}
+
+.main-wrapper{
+  /* display:flex;
+  flex-direction: column; */
+  /* align-content: space-between; */
+  border:1px solid red;
+  /* height: 100vh; */
+
+}
+
+/* HEADER AND NAVIGATION MENUS */
+/* -------------------------------------------------------------------------------------------- */
+.header {
+  display:block;
+  border:1px dashed yellow;
+  background: var(--header-bgcolor);
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: fixed;
+  /* z-index:999; */
+  width:100vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu{
+  background-color: var(--menucolor);
+  display: flex;
+  justify-content: flex-end;
+
+}
+.menu-item{
+  display: inline-block;
+  color: white;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 14px 20px;
+}
+.menu-item a, a:visited, a:active{
+  text-decoration: none;
+  color:white;
+}
+.menu-item a:hover{
+  text-decoration: none;
+  color:yellow;
+  border-top:2px solid yellow;
+}
+.menu-item-logo{
+  align-self: center;
+  font-size: 24px;
+  /* margin-left:auto; */
+  margin-right: 1rem;
+  border-left: 2px solid rgb(94, 94, 207);
+  padding:0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background:steelblue;
+  margin-left: 2rem;
+  /* margin-right: 2rem; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* BODY */
+/* -------------------------------------------------------------------------------------------- */
+
+.home{
+
+  border:1px dotted cyan;
+  color:white;
+  
+  width: 80vw;
+  margin: auto;
+  margin-top:4.6rem;
+}
+.home-section{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.home-section-label{
+  font-size: 24px;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+}
+.home-section-content{
+  font-size: 20px;
+  padding: 1rem;
+
+}
+
+.home-section-content p{
+  border-bottom: 1px dotted black;
+  padding-bottom:1rem;
 }

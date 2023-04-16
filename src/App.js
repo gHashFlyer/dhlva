@@ -1,12 +1,21 @@
-
+import React from 'react';
+import { Routes, Route, useNavigate } from "react-router-dom";
 import './App.css';
+
+import Header from "./components/Header"
+import Home from "./components/Home"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
+<React.Fragment>
+  <div className='main-wrapper'>
+    <Header />
+    <Home />
+  </div>
+
+
+  {/* <Route path="/feedback" element={<Feedback/>}/> */}
+</React.Fragment>
   );
 }
 
