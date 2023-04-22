@@ -1,5 +1,5 @@
 :root{
-  --header-bgcolor: rgba(2, 32, 68, 0.85);
+  --header-bgcolor: #40557D;
   --menu-color: rgba(48, 53, 85, 0.85);
 }
 
@@ -7,23 +7,21 @@
   box-sizing: border-box;
 }
 body{
-  background-color: rgb(115, 126, 96);
+  background-color: #7D7669; /*#40557D;*/ /*rgb(115, 126, 96);*/
+  width: 100vw;
 
 }
 
 .main-wrapper{
-  /* display:flex;
-  flex-direction: column; */
-  /* align-content: space-between; */
-  border:1px solid red;
-  /* height: 100vh; */
+  width:100vw;
+  /* border:1px solid red; */
 
 }
 
 /* HEADER AND NAVIGATION MENUS */
 /* -------------------------------------------------------------------------------------------- */
 .header {
-  display:block;
+  /* display:block; */
   border:1px dashed yellow;
   background: var(--header-bgcolor);
   text-align: center;
@@ -35,9 +33,10 @@ body{
 }
 
 .menu{
-  background-color: var(--menucolor);
+  background-color: var  (--menucolor);
   display: flex;
-  justify-content: flex-end;
+  justify-content:left;
+  border:1px dashed red;
 
 }
 .menu-item{
@@ -76,21 +75,49 @@ body{
 
 .home{
 
-  border:1px dotted cyan;
+  /* border:1px dotted cyan; */
   color:white;
   
   width: 80vw;
   margin: auto;
-  margin-top:4.6rem;
+  /* margin-top:4.6rem; */
+  padding-top:1rem;
 }
-.home-section{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+.home-section{
+  font-family: Futura, Verdana, Geneva, Tahoma, sans-serif;
+  
 }
+
+.home-banner{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.home-banner-a{
+  background: #54627D;
+  width:25vw;
+  height:30vh;
+}
+.home-banner-b{
+  background: #7D6840;
+  width:25vw;
+}
+.home-banner-c{
+  background: #54627D;
+  width:25vw;
+}
+.home-banner img{
+  width:inherit;
+}
+
+
+
 .home-section-label{
   font-size: 24px;
   padding: 1rem;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid black;
 }
 .home-section-content{
   font-size: 20px;
@@ -99,6 +126,6 @@ body{
 }
 
 .home-section-content p{
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted silver;;
   padding-bottom:1rem;
 }

@@ -9,7 +9,7 @@ function App() {
   return (
 <React.Fragment>
   <div className='main-wrapper'>
-    <Header />
+
     <Home />
   </div>
 
