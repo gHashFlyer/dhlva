@@ -270,3 +270,45 @@ body{
   text-align: center;;
   /* flex: 1 1 0; */
 }
+
+
+/* ------------- Menu component -------------------- */
+
+.header{
+  background:#7D6840;
+}
+
+.header-menu{
+  background-color: var  (--menucolor);
+  display: flex;
+  justify-content:left;
+  /* border-top:1px dashed white; */
+  padding:0.2rem;
+
+}
+.header-menu-item{
+  display: inline-block;
+  background-color: #40557D;
+  color: white;
+  font-size: 15px;
+  padding: 10px 12px;
+  margin-right:2rem;
+  border-radius: 5px;
+  /* flex: 1 1 0;
+  width:0; */
+}
+.header-menu-item:hover{
+  color: yellow;
+  background: #40557D;
+}
+.header-menu-item a, a:visited, a:active{
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+.header-menu-item a:hover{
+  text-decoration: none;
+  color: yellow;
+}
+
