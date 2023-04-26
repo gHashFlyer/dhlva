@@ -1,3 +1,7 @@
+/*
+http://www.vidsbee.com/ColorPick/Pallete/?plain=1#40557D,54627D,69707D,7D6840,7D6F54,7D7669
+*/
+
 :root{
   --header-bgcolor: #40557D;
   --menu-color: rgba(48, 53, 85, 0.85);
@@ -20,54 +24,43 @@ body{
 
 /* HEADER AND NAVIGATION MENUS */
 /* -------------------------------------------------------------------------------------------- */
-.header {
-  /* display:block; */
-  border:1px dashed yellow;
-  background: var(--header-bgcolor);
-  text-align: center;
-  position: fixed;
-  /* z-index:999; */
-  width:100vw;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
-}
+
 
 .menu{
   background-color: var  (--menucolor);
   display: flex;
   justify-content:left;
-  border:1px dashed red;
+  /* border-top:1px dashed white; */
+  padding:0.2rem;
 
 }
 .menu-item{
   display: inline-block;
+  background-color: #7D6F54; /* #40557D;*/
   color: white;
-  background-color: transparent;
-  font-size: 20px;
-  padding: 14px 20px;
+  font-size: 15px;
+  padding: 10px 12px;
+  margin-right:2rem;
+  border-radius: 5px;
+  /* flex: 1 1 0;
+  width:0; */
+}
+.menu-item:hover{
+  color: yellow;
+  background: #40557D;
 }
 .menu-item a, a:visited, a:active{
   text-decoration: none;
-  color:white;
+  color: white;
+  text-decoration: none;
 }
+
 .menu-item a:hover{
   text-decoration: none;
-  color:yellow;
-  border-top:2px solid yellow;
+  color: yellow;
 }
-.menu-item-logo{
-  align-self: center;
-  font-size: 24px;
-  /* margin-left:auto; */
-  margin-right: 1rem;
-  border-left: 2px solid rgb(94, 94, 207);
-  padding:0.2em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  background:steelblue;
-  margin-left: 2rem;
-  /* margin-right: 2rem; */
-}
+
+
 
 
 /* BODY */
@@ -112,6 +105,12 @@ body{
   width:inherit;
 }
 
+.home-banner-link{
+  text-decoration: none;
+  margin:auto;
+
+}
+
 
 
 .home-section-label{
@@ -128,4 +127,146 @@ body{
 .home-section-content p{
   border-bottom: 1px dotted silver;;
   padding-bottom:1rem;
+}
+
+
+.p-small-black{
+  color: black;
+  font-size:smaller;
+}
+
+
+/* LOGIN PAGE ----------------------------------------------------------------------------- */
+/* https://codepen.io/fghty/pen/PojKNEG */
+.login{
+  background:#54627D;
+  height:100vh;
+  width:100vw;
+}
+.login-cancel{
+  text-decoration: none;
+  padding:1rem;
+  
+}
+.login-cancel-link{
+  text-decoration: none;
+  padding:1rem;
+  background:#7D6F54;
+}
+.login-cancel-link:hover{
+  text-decoration: none;
+  background:#e5e5e5;
+  color:black;
+}
+
+/* Login form */
+.login-form{
+  height: 520px;
+  width: 400px;
+  background-color: rgba(255,255,255,0.13);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 0px 35px;
+}
+.login-form *{
+  font-family: 'Poppins',sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+.login-form h3{
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
+
+.login-form-label{
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login-form-input{
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+::placeholder{
+  color: #e5e5e5;
+}
+.login-form-button{
+  margin-top: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------------- */
+.userhome{
+  color:black;
+  background:rgb(193, 194, 203);
+  padding-top:1rem;
+  font-family: Futura, Verdana, Geneva, Tahoma, sans-serif;
+  height:100vh;
+}
+.userhome-content{
+  font-size: 20px;
+  padding: 1rem;
+
+}
+
+.userhome-topline{
+  font-size: 24px;
+  padding: 1rem;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  
+}
+.userhome-topline h2{
+  margin:0;
+  padding:0;
+
+}
+.userhome-content{
+  border: 2px dashed green;
+} 
+
+.userhome-upper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px dotted red;
+  background-color: #40557D;
+}
+
+.userhome-upper-block{
+  color: white;
+  background-color: #40557D;
+
+}
+
+.userhome-upper-block h1{
+  text-align: center;;
+  /* flex: 1 1 0; */
 }
