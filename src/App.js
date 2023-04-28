@@ -16,11 +16,11 @@ function App() {
   const [userAuth, setUserAuth] = useState("")
   const [adminLevel, setAdminLevel] = useState(0)
 
-
   useEffect(() => {
     console.log("app usereffect")
     let callsign = localStorage.getItem("callsign")
     if(callsign){
+      setLoggedIn(true)
       setCallsign(callsign)
       setFullName(localStorage.getItem("fullname"))
       setUserAuth(localStorage.getItem("userauth"))
@@ -44,15 +44,19 @@ function App() {
     localStorage.setItem("userauth", obj.userauth);
   }
 
-  
-  
+  const appLogout = () =>{
+    localStorage.clear()
+    setLoggedIn(false)
+
+  }
+
 
   return (
   <Suspense fallback={<p>Loading...</p>}>
     <Routes>
-        <Route path="/" element={ <Home /> } />
+        <Route path="/" element={ <Home loggedIn={loggedIn} /> } />
         <Route path="/login" element={ <Login appLogin={loginUpdate}/> } />
-        <Route path="/userhome" element={ <UserHome fullname={fullName} callsign={callsign} loggedIn={loggedIn} userauth={userAuth}/> } />
+        <Route path="/userhome" element={ <UserHome appLogout={appLogout} fullname={fullName} callsign={callsign} loggedIn={loggedIn} userauth={userAuth}/> } />
     </Routes>
   </Suspense>
   );

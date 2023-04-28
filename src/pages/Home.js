@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from 'react-router-dom'
 
 import bg_image1 from "../images/bgimage.png"
@@ -6,7 +6,9 @@ import bg_image2 from "../images/multi.png"
 import bg_image3 from "../images/green.png"
 import bg_image4 from "../images/spray.png"
 
-const Home=()=>{
+const Home=(props)=>{
+
+    //const [loggedIn, setLoggedIn] = useState(false)
 
     return(
         <React.Fragment>
@@ -22,7 +24,6 @@ const Home=()=>{
                     <div className="home-banner-c">
                     <img src={bg_image3} />
                     </div>
-
                 </div>
 
                 <div className="home-section">
@@ -37,8 +38,8 @@ const Home=()=>{
                         </p>
 
                         <p className="p-small-black">
-                        Currently membership is by invitation only. Add your name to the _waiting list_(link) and we'll
-                        be in touch if a slot opens for general membership.
+                        Currently membership is by invitation only. 
+                        {/* Add your name to the _waiting list_(link) and we'll be in touch if a slot opens for general membership. */}
                         </p>
 
                     </div>
@@ -52,7 +53,9 @@ const Home=()=>{
                             <Link to='/'><button className="menu-item">Recent Flights</button></Link>
                             <Link to='/'><button className="menu-item">Flying Now</button></Link>
                             <Link to='/'><button className="menu-item">Pilot Stories</button></Link>
-                            <Link to='/login'><button className="menu-item">Login</button></Link>
+                            {props.loggedIn && <Link to='/userhome'><button className="menu-item">User Home</button></Link>}
+                            {!props.loggedIn && <Link to='/login'><button className="menu-item">Login</button></Link>}
+                            
 
                         </div>
                     </div>
