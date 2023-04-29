@@ -52,7 +52,7 @@ const Home=(props)=>{
                         <div className="menu">
                             <Link to='/recentflights'><button className="menu-item">Recent Flights</button></Link>
                             <Link to='/flyingnow'><button className="menu-item">Flying Now</button></Link>
-                            <Link to='/'><button className="menu-item">Pilot Stories</button></Link>
+                            <Link to='/pilotstories'><button className="menu-item">Pilot Stories</button></Link>
                             {props.loggedIn && <Link to='/userhome'><button className="menu-item">User Home</button></Link>}
                             {!props.loggedIn && <Link to='/login'><button className="menu-item">Login</button></Link>}
                             

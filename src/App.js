@@ -8,6 +8,7 @@ import Login from "./pages/Login"
 import UserHome from './pages/UserHome';
 import RecentFlights from './pages/RecentFlights';
 import FlyingNow from './pages/FlyingNow';
+import PilotStories from './pages/PilotStories';
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
         <Route path="/userhome" element={ <UserHome appLogout={appLogout} fullname={fullName} callsign={callsign} loggedIn={loggedIn} userauth={userAuth}/> } />
         <Route path="/recentflights" element={ <RecentFlights /> } />
         <Route path="/flyingnow" element={ <FlyingNow /> } />
+        <Route path="/pilotstories" element={ <PilotStories /> } />
     </Routes>
   </Suspense>
   );
