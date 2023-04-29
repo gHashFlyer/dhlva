@@ -26,6 +26,7 @@ const UserHome=(props)=>{
             }else{
                 console.log("set postParams")
                 const postParams = { "callsign": cs, "auth": au };
+                setCallsign(cs);
                 setPostData(postParams);
             }
         }
@@ -56,11 +57,23 @@ const UserHome=(props)=>{
         return () => {};
       }, [postData]);      
 
+      function handleLogout(){
+        props.appLogout();
+    }
 
     return(
         <React.Fragment>
             
-            <Header appLogout = {props.appLogout}/>
+            <div className="userhome-header">
+                <div className="userhome-header-menu">
+                    <Link to='/'><button className="userhome-header-menu-item">Home</button></Link>
+                    <Link to='/'><button onClick={handleLogout} className="userhome-header-menu-item">Logout</button></Link>                
+                    {/* <Link to='/'><button className="header-menu-item">Home</button></Link>
+                    <Link to='/'><button className="header-menu-item">Home</button></Link>
+                    <Link to='/'><button className="header-menu-item">Home</button></Link> */}
+                </div>
+            </div>
+
             <div className="userhome">
                 
                 <div className="userhome-topline">
