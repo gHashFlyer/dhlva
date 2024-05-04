@@ -64,15 +64,15 @@ return(
         <React.Fragment>
             <div className="login">
                 <div className="login-cancel">
-                    <Link className="login-cancel-link" to='/'>HOME</Link>
+                    <Link className="login-cancel-link" to='/'>ExtraFly</Link>
                 </div>
                     
 
                     <form className="login-form" onSubmit={handleForm}>
-                        <h3>ExtraFly Login</h3>
+                        <h3>Login</h3>
 
                         <label className="login-form-label" for="username">Email Address</label>
-                        <input required className="login-form-input" type="text" placeholder="Email or Phone" id="username" name="login"/>
+                        <input required className="login-form-input" type="text" placeholder="Email Address" id="username" name="login"/>
 
                         <label className="login-form-label" for="password">Password</label>
                         <input required className="login-form-input" type="password" placeholder="Password" id="password" name="password"/>

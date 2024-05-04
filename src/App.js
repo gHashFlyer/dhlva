@@ -5,10 +5,13 @@ import './App.css';
 
 import Home from "./pages/Home"
 import Login from "./pages/Login"
-import UserHome from './pages/UserHome';
 import RecentFlights from './pages/RecentFlights';
 import FlyingNow from './pages/FlyingNow';
 import PilotStories from './pages/PilotStories';
+
+{/* Authenticated pages */}
+// import UserHome from './pages/UserHome';
+const UserHome = React.lazy(() => import('./pages/UserHome'));
 
 
 function App() {
@@ -16,8 +19,8 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [fullName, setFullName] = useState("");
   const [callsign, setCallsign] = useState("");
-  const [userAuth, setUserAuth] = useState("")
-  const [adminLevel, setAdminLevel] = useState(0)
+  const [userAuth, setUserAuth] = useState("");
+  const [adminLevel, setAdminLevel] = useState(0);
 
   useEffect(() => {
     console.log("app usereffect")
@@ -63,6 +66,9 @@ function App() {
         <Route path="/recentflights" element={ <RecentFlights /> } />
         <Route path="/flyingnow" element={ <FlyingNow /> } />
         <Route path="/pilotstories" element={ <PilotStories /> } />
+
+
+
     </Routes>
   </Suspense>
   );

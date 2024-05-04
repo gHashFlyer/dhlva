@@ -16,10 +16,10 @@ const Home=(props)=>{
                 
                 <div className="home-banner">
                     <div className="home-banner-a">
-                        <img src={bg_image1} />
+                        <img src={bg_image4} />
                     </div>
                     <div className="home-banner-b">
-                    <img src={bg_image4} />
+                    <img src={bg_image2} />
                     </div>
                     <div className="home-banner-c">
                     <img src={bg_image3} />

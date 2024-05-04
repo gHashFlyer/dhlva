@@ -86,21 +86,26 @@ body{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+  
   /* align-items: center; */
 }
 .home-banner-a{
   background: #54627D;
   width:25vw;
-  height:30vh;
+  border-radius: 8px;
+
 }
 .home-banner-b{
   background: #7D6840;
   width:25vw;
+  border-radius: 8px;
 }
 .home-banner-c{
   background: #54627D;
   width:25vw;
+  border-radius: 8px;
 }
+
 .home-banner img{
   width:inherit;
 }
