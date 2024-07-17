@@ -27,14 +27,15 @@ const Home=(props)=>{
                 </div>
 
                 <div className="home-section">
-                    <div className="home-section-label">ABOUT US</div>
+                    <div className="home-section-label">ABOUT VHOG</div>
                     <div className="home-section-content">
                         <p>
-                        ExtraFly Virtual Aviation began as an idea in 2023 from a group of friends who share a passion
+                        Virtual Helicopter Operations Group (VHOG) began as an idea in 2023 from a group of friends who share 
+                        a passion
                         for aviation and flight simulation, and helicopter operations in particular. Most of us here have many
                         thousands of hours of flight time in large jets and turbprops, and belong to other virtual airlines 
-                        that cater to structured flight operations, revenue, landing rates, and other metrics. And here
-                        we have Extra fun flying together with a mixed variety of aircraft from X-Plane, MSFS 2020, FSX, P3D, and FS9.
+                        that cater to structured flight operations, revenue, landing rates, and other metrics. VHOG is tailored
+                        specficially to helicopter operatios using a helicoppters from MSFS2020, X-Plane, FSX, P3D, and FS9.
                         </p>
 
                         <p className="p-small-black">
