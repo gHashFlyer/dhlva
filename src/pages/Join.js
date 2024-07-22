@@ -75,6 +75,10 @@ const JoinForm = (props) => {
     return () => {};
   }, [postData]);
 
+  // email validation function
+  const isEmail = (email) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+
+
   const handleFormSubmission = (event) => {
     event.preventDefault();
 
@@ -89,6 +93,11 @@ const JoinForm = (props) => {
     }
     if (email.trim() === "") {
       return;
+    }else{
+        if(! isEmail(email)){
+            window.alert("Invalid email address: " + email)
+            return;
+        }
     }
     if (verify.trim() !== "123") {
       // console.log("not 123")
