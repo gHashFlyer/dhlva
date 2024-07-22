@@ -4,7 +4,7 @@ import {Link, useNavigate} from 'react-router-dom'
 //https://www.freecodecamp.org/news/how-to-use-axios-with-react/#what-is-axios
 import axios from "axios";
 
-const loginURL = "https://extrafly.net/api/login.php"
+const loginURL = "https://vhog.net/api/login.php"
 
 const Login = (props) => {
 
@@ -64,7 +64,7 @@ return(
         <React.Fragment>
             <div className="login">
                 <div className="login-cancel">
-                    <Link className="login-cancel-link" to='/'>ExtraFly</Link>
+                    <Link className="login-cancel-link" to='/'>Home</Link>
                 </div>
                     
 

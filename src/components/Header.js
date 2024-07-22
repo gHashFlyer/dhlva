@@ -7,7 +7,7 @@ const Header = (props) => {
     return <React.Fragment>
         <div className="header">
             <div className="header-menu">
-                <Link to='/'><button className="header-menu-item">EXF Aviation</button></Link>
+                <Link to='/'><button className="header-menu-item">Home</button></Link>
                 <div className="header-menu-pagetitle">{props.title}</div>
                 {/* <Link to='/'><button className="header-menu-item"></button></Link> */}
 

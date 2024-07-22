@@ -8,6 +8,7 @@ import Login from "./pages/Login"
 import RecentFlights from './pages/RecentFlights';
 import FlyingNow from './pages/FlyingNow';
 import PilotStories from './pages/PilotStories';
+import JoinForm from './pages/Join';
 
 {/* Authenticated pages */}
 // import UserHome from './pages/UserHome';
@@ -61,8 +62,10 @@ function App() {
   <Suspense fallback={<p>Loading...</p>}>
     <Routes>
         <Route path="/" element={ <Home loggedIn={loggedIn} /> } />
+        <Route path="/joinform" element={<JoinForm /> } />
         <Route path="/login" element={ <Login appLogin={loginUpdate}/> } />
         <Route path="/userhome" element={ <UserHome appLogout={appLogout} fullname={fullName} callsign={callsign} loggedIn={loggedIn} userauth={userAuth}/> } />
+
         <Route path="/recentflights" element={ <RecentFlights /> } />
         <Route path="/flyingnow" element={ <FlyingNow /> } />
         <Route path="/pilotstories" element={ <PilotStories /> } />

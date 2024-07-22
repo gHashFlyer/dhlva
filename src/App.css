@@ -437,3 +437,126 @@ table.blueTable tfoot .links a{
   font-size: 11px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.signup-form{
+  width:64%;
+  margin: auto;
+}
+
+
+.signup-form-upper{
+  display: flex;
+  align-items: center;
+  padding-bottom: 2rem;
+
+}
+
+.signup-form-logo{
+  width:128px;
+  height:128px;
+}
+.signup-form-description{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  margin-left:2rem;
+}
+
+.signup-form-lower{
+  margin:auto;
+  width: 90%;
+  background-color: rgb(71,103,128);
+  padding:0.5em;
+}
+
+.signup-form-label{
+  color: white;
+  padding-bottom: 0.25rem;
+}
+
+.signup-form-field{
+  padding:0.3rem;
+}
+
+
+.signup-form-position input{
+  background:#c1e8fc;
+  width:50%;
+  height:2rem;
+  font-size: 1.5rem;
+  padding:0.3rem;
+
+}
+
+
+.signup-form-position textarea{
+  background:#c1e8fc;
+  width:100%;
+  height:4rem;
+  font-size: 1.5rem;
+  resize: none;
+}
+
+
+
+.signup-form-button {
+  margin-left:0.5rem;
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:linear-gradient(to bottom, #808047 5%, #805547 100%);
+	background-color:#007dc1;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+}
+.signup-form-button:hover {
+	background:linear-gradient(to bottom, #805547 5%, #808047 100%);
+	background-color:#805547;
+}
+.signup-form-button:active {
+	position:relative;
+	top:1px;
+}
+
+.signup-form-buttongroup {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.signup-form-disclaimer{
+  color:#54a3f7;
+  margin-left: 1.2rem;
+  font-size: 0.75rem;
+
+}
+
+.signup-form-disclaimer a{
+  color:#268fff;
+  font-size: 0.75rem;
+  
+
+}
+
+.signup-form-disclaimer a:hover{
+  color:#edff26;
+  font-size: 0.75rem;
+ 
+}
+
+.joinlink a{
+  font-size: 1.1rem;
+  color: blue;
+  text-decoration: none;
+}
+
+.joinlink a:hover{ 
+  background-color: blue;
+  color:yellow;
+  text-decoration: none;
+}
+

@@ -27,7 +27,7 @@ const Home=(props)=>{
                 </div>
 
                 <div className="home-section">
-                    <div className="home-section-label">ABOUT VHOG</div>
+                    <div className="home-section-label">Virtual Helicopter Operations Group</div>
                     <div className="home-section-content">
                         <p>
                         Virtual Helicopter Operations Group (VHOG) began as an idea in 2023 from a group of friends who share 
@@ -35,13 +35,14 @@ const Home=(props)=>{
                         for aviation and flight simulation, and helicopter operations in particular. Most of us here have many
                         thousands of hours of flight time in large jets and turbprops, and belong to other virtual airlines 
                         that cater to structured flight operations, revenue, landing rates, and other metrics. VHOG is tailored
-                        specficially to helicopter operatios using a helicoppters from MSFS2020, X-Plane, FSX, P3D, and FS9.
+                        specficially to helicopter operations in MSFS and X-Plane.
                         </p>
 
-                        <p className="p-small-black">
-                        Currently membership is by invitation only. 
-                        {/* Add your name to the _waiting list_(link) and we'll be in touch if a slot opens for general membership. */}
-                        </p>
+                        <div className="joinlink">
+                            {!props.loggedIn && <a href='/joinform'>Not a member? Click here to join us! </a>}
+                        </div>
+                        
+
 
                     </div>
 
@@ -51,10 +52,10 @@ const Home=(props)=>{
                     <div className="home-section-label">OPERATIONS</div>
                     <div className="home-section-content">
                         <div className="menu">
-                            <Link to='/recentflights'><button className="menu-item">Recent Flights</button></Link>
+                            {/* <Link to='/recentflights'><button className="menu-item">Stats</button></Link>
                             <Link to='/flyingnow'><button className="menu-item">Flying Now</button></Link>
-                            <Link to='/pilotstories'><button className="menu-item">Pilot Stories</button></Link>
-                            {props.loggedIn && <Link to='/userhome'><button className="menu-item">User Home</button></Link>}
+                            <Link to='/pilotstories'><button className="menu-item">Join Us</button></Link> */}
+                            {props.loggedIn && <Link to='/userhome'><button className="menu-item">My Dashboard</button></Link>}
                             {!props.loggedIn && <Link to='/login'><button className="menu-item">Login</button></Link>}
                             
 
