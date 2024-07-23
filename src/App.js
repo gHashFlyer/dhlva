@@ -9,11 +9,13 @@ import RecentFlights from './pages/RecentFlights';
 import FlyingNow from './pages/FlyingNow';
 import PilotStories from './pages/PilotStories';
 import JoinForm from './pages/Join';
+import JoinFormLanding from './pages/JoinLanding';
+
 
 {/* Authenticated pages */}
 // import UserHome from './pages/UserHome';
 const UserHome = React.lazy(() => import('./pages/UserHome'));
-
+const AdminUserApps = React.lazy(()=> import('./pages/AdminUserApps'))
 
 function App() {
 
@@ -24,13 +26,13 @@ function App() {
   const [adminLevel, setAdminLevel] = useState(0);
 
   useEffect(() => {
-    console.log("app usereffect")
+    console.log("app useEffect")
     let callsign = localStorage.getItem("callsign")
     if(callsign){
       setLoggedIn(true)
       setCallsign(callsign)
       setFullName(localStorage.getItem("fullname"))
-      setUserAuth(localStorage.getItem("userauth"))
+      setUserAuth(localStorage.getItem("auth"))
     }
       return () => {}
   }, [])
@@ -42,13 +44,14 @@ function App() {
     setLoggedIn(true);
     setFullName(obj.fullname);
     setCallsign(obj.callsign);
-    setUserAuth(obj.userauth)
-    setAdminLevel(obj.adminlevel);
+    setUserAuth(obj.auth)
+
 
     localStorage.setItem("epoch", Date.now().toString());
     localStorage.setItem("fullname", obj.fullname);
     localStorage.setItem("callsign", obj.callsign);
-    localStorage.setItem("userauth", obj.userauth);
+    localStorage.setItem("auth", obj.auth);
+
   }
 
   const appLogout = () =>{
@@ -63,14 +66,13 @@ function App() {
     <Routes>
         <Route path="/" element={ <Home loggedIn={loggedIn} /> } />
         <Route path="/joinform" element={<JoinForm /> } />
+        <Route path="/joinlanding" element={<JoinFormLanding /> } />
         <Route path="/login" element={ <Login appLogin={loginUpdate}/> } />
         <Route path="/userhome" element={ <UserHome appLogout={appLogout} fullname={fullName} callsign={callsign} loggedIn={loggedIn} userauth={userAuth}/> } />
-
         <Route path="/recentflights" element={ <RecentFlights /> } />
         <Route path="/flyingnow" element={ <FlyingNow /> } />
         <Route path="/pilotstories" element={ <PilotStories /> } />
-
-
+        <Route path="/admin_user_apps" element= { <AdminUserApps/> } />
 
     </Routes>
   </Suspense>

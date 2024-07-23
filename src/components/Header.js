@@ -10,7 +10,6 @@ const Header = (props) => {
                 <Link to='/'><button className="header-menu-item">Home</button></Link>
                 <div className="header-menu-pagetitle">{props.title}</div>
                 {/* <Link to='/'><button className="header-menu-item"></button></Link> */}
-
                 {/* <Link to='/'><button className="header-menu-item">Home</button></Link>
                 <Link to='/'><button className="header-menu-item">Home</button></Link>
                 <Link to='/'><button className="header-menu-item">Home</button></Link> */}

@@ -22,6 +22,7 @@ const JoinForm = (props) => {
   const [postData, setPostData] = useState(false);
   const [respData, setRespData] = useState(false);
   const [axiosError, setAxiosError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChangeFirstName = (e) => {
@@ -49,7 +50,7 @@ const JoinForm = (props) => {
 
   useEffect(() => {
     if (postData !== false) {
-      console.log("axios..");
+      console.log("postdata=" + postData);
       axios
         .post("https://vhog.net/newapp/index.php", JSON.stringify(postData))
         .then((response) => {
@@ -58,18 +59,16 @@ const JoinForm = (props) => {
             console.log(response.data);
             // Send the object up to App.js:
             //props.appLogin(response.data);
-            navigate("/", { replace: true });
+            navigate("/joinlanding", { replace: true });
           } else {
             console.log("no resp data");
-            setErrorMessage("Invalid Login");
+            setErrorMessage("Error");
           }
         })
         .catch((error) => {
           setAxiosError(error);
           setErrorMessage(error.message);
         });
-
-      //console.log(postData)
       setPostData(false);
     }
     return () => {};
@@ -108,6 +107,7 @@ const JoinForm = (props) => {
     }
 
     console.log("Form submitted");
+    setLoading(true)
     const params = {
       comments: comments,
       firstname: firstName,
@@ -221,14 +221,16 @@ const JoinForm = (props) => {
                   </div>
                 </div>
                 <div className="signup-form-lower">
+                
+                    {loading ? <div className="critical-message"><div id="loading"></div>WORKING... PLEASE WAIT</div> : 
                     <div className="signup-form-buttongroup">
                         <input className="signup-form-button"  onClick={handleFormSubmission} type='button' value='Submit' />
 
                         <div className="signup-form-disclaimer">
                         By pressing the submit button you agree to our <a href='terms/terms.txt'>terms of use</a>.
                         </div>
-
                     </div>
+                    }
 
 
                 </div>

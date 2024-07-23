@@ -13,6 +13,8 @@ const UserHome=(props)=>{
     const [postData, setPostData] = useState(false)
     const [respData, setRespData] = useState(false)
 
+    const [staff, setStaff] = useState(false)
+
     // console.log(props)
 
     // Identify user and initate request for more data
@@ -20,7 +22,7 @@ const UserHome=(props)=>{
         if(!callsign){
             console.log("check local storage")
             const cs = localStorage.getItem("callsign");
-            const au = localStorage.getItem("userauth");
+            const au = localStorage.getItem("auth");
             if(cs === null || au === null){
                 navigate('/',{replace:true})
             }else{
@@ -33,15 +35,19 @@ const UserHome=(props)=>{
         return () => {};
     }, []);
 
-      // Get user data if there is a request
-      useEffect(() => {
+    // Get user data if there is a request
+    useEffect(() => {
         if(postData){
             axios
-            .post("https://extrafly.net/api/get_userhome.php",JSON.stringify(postData))
+            .post("https://vhog.net/api/get_userhome.php",JSON.stringify(postData))
             .then((response)=>{
                 setRespData(response.data)
                 if(response.data){
                     console.log(response.data)
+                    if(response.data.staff){
+                        setStaff(response.data.staff)
+                        console.log(response.data.staff)
+                    }
                 }else{
                     console.log("...")
                 }
@@ -49,10 +55,8 @@ const UserHome=(props)=>{
             .catch(error=> {
                 console.log("axios error")
             })        
-            console.log("get data")
             setPostData(false)
         }
-
 
         return () => {};
       }, [postData]);      
@@ -67,6 +71,12 @@ const UserHome=(props)=>{
             <div className="userhome-header">
                 <div className="userhome-header-menu">
                     <Link to='/'><button className="userhome-header-menu-item">Home</button></Link>
+                    {respData && respData.staff && respData.staff === 'CEO'? 
+
+                        <Link to='/admin_user_apps'><button className="header-menu-item">Admin User Apps</button></Link>
+                    
+                    :""}
+
                     <Link to='/'><button onClick={handleLogout} className="userhome-header-menu-item">Logout</button></Link>                
                     {/* <Link to='/'><button className="header-menu-item">Home</button></Link>
                     <Link to='/'><button className="header-menu-item">Home</button></Link>
@@ -97,19 +107,19 @@ const UserHome=(props)=>{
                     <div className="userhome-lower">
                         <table className="blueTable">
                             <tr>
-                                <th>Date</th><th>Orig-Dest</th><th>Depart</th><th>Arrive</th><th>Aircraft</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th><th>Pirep</th>
+                                {/* <th>Date</th><th>Depart</th><th>Arrive</th><th>Aircraft</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th> */}
+                                <th>Date</th><th>Aircraft</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th>
                             </tr>
                             {respData && respData.logbook.map((x)=>
 
                                 <tr>
                                 <td>{x.fdate}</td>
-                                <td>{x.orig}-{x.dest}</td>
-                                <td>{x.oapt}</td>
-                                <td>{x.dapt}</td>
+                                {/* <td>{x.oapt}</td>
+                                <td>{x.dapt}</td> */}
                                 <td>{x.aircraft}</td>
                                 <td className="blueTable-td-right">{x.enrtime}</td>
                                 <td className="blueTable-td-right">{x.nm}</td>
-                                <td className="blueTable-td-pirep">{x.pirep}</td>
+
                                 </tr>
 
                                 )
