@@ -10,12 +10,13 @@ import FlyingNow from './pages/FlyingNow';
 import PilotStories from './pages/PilotStories';
 import JoinForm from './pages/Join';
 import JoinFormLanding from './pages/JoinLanding';
-
+//import AdminUserNew from './pages/AdminUserNew';
 
 {/* Authenticated pages */}
 // import UserHome from './pages/UserHome';
 const UserHome = React.lazy(() => import('./pages/UserHome'));
 const AdminUserApps = React.lazy(()=> import('./pages/AdminUserApps'))
+const AdminUserNew = React.lazy(()=> import('./pages/AdminUserNew'))
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
         <Route path="/flyingnow" element={ <FlyingNow /> } />
         <Route path="/pilotstories" element={ <PilotStories /> } />
         <Route path="/admin_user_apps" element= { <AdminUserApps/> } />
+        <Route path="/admin_user_new/:id" element= { <AdminUserNew/> } />
 
     </Routes>
   </Suspense>
