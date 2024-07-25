@@ -593,4 +593,71 @@ table.blueTable tfoot .links a{
 .newapps-user-textarea{
   margin-top:1rem;
   width:100%;
+  height:330px;
+  white-space: pre-line;
+}
+
+.newapps-user-actionarea{
+  display:flex;
+
+}
+.newapps-user-radiogroup {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border:#007dc1;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 2px rgba(0, 0, 0, 0.06);
+  padding: 0.1rem;
+  width: 50%;
+  font-size: 14px;
+}
+
+.newapps-user-radiogroup .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.newapps-user-radiogroup .radio input {
+  display: none;
+}
+
+.newapps-user-radiogroup .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 1px dotted rgb(132, 120, 120);
+  padding: 0.4rem;/*.5rem 0;*/
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
+}
+
+.newapps-user-radiogroup .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+
+.newapps-user-button {
+  margin-left:2rem;
+  padding: 9px 20px;
+  border: none;
+  outline: none;
+  background-color: #3b3333;
+  color: gold;
+  border-radius: 7px;
+  font-size: 14px;
+  /* font-weight: 600; */
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+
+.newapps-user-button:hover {
+  transform: translateX(2px);
+  background-color: #484747;
+  color: gold;  
 }
