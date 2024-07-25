@@ -588,7 +588,11 @@ table.blueTable tfoot .links a{
 }
 /* End Loading Spinner*/
 
-
+.newapps-group-label{
+  font-size: 1.3rem;
+  color: black;
+  padding: 0.5rem;
+}
 
 .newapps-user-textarea{
   margin-top:1rem;

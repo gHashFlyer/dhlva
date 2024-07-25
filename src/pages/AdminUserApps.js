@@ -61,7 +61,31 @@ const AdminUserApps=(props)=>{
     }
 
 
-    // Verify user has access to this page.
+
+
+
+    let usersVerified
+    if(respData.users){
+        console.log(respData)
+        usersVerified = respData.users.filter(function(el){ return el.status=='verified'});
+    }
+    let usersPending
+    if(respData.users){
+        console.log(respData)
+        usersPending = respData.users.filter(function(el){ return el.status=='pending'});
+    }    
+    let usersApproved
+    if(respData.users){
+        console.log(respData)
+        usersApproved = respData.users.filter(function(el){ return el.status=='approved'});
+    }    
+    let usersRejected
+    if(respData.users){
+        console.log(respData)
+        usersRejected = respData.users.filter(function(el){ return el.status=='rejected'});
+    }    
+
+    
 
 
 
@@ -73,13 +97,12 @@ const AdminUserApps=(props)=>{
 
                 <div className="userhome-content">
                     <div className="userhome-lower">
+                        <div className="newapps-group-label">Verified</div>
                         <table className="blueTable">
                             <tr>
                                 <th>Date Time</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Comments</th><th>Status</th><th>Action</th>
-                                
                             </tr>
-                            {respData && respData.users.map((x)=>
-
+                            {usersVerified  && usersVerified.map((x)=>
                                 <tr key={x.id}>
                                     <td>{x.appdate}</td>
                                     <td>{x.firstname}</td>
@@ -91,13 +114,82 @@ const AdminUserApps=(props)=>{
                                         <Link to={`/admin_user_new/` + x.id}><button className="menu-item">Manage {x.id}</button></Link> 
                                     </td>
                                 </tr>
-
                                 )
                             }
 
                         </table>
-
                     </div>
+
+                    <div className="userhome-lower">
+                        <div className="newapps-group-label">Pending</div>
+                        <table className="blueTable">
+                            <tr>
+                                <th>Date Time</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Comments</th><th>Status</th><th>Action</th>
+                            </tr>
+                            {usersPending  && usersPending.map((x)=>
+                                <tr key={x.id}>
+                                    <td>{x.appdate}</td>
+                                    <td>{x.firstname}</td>
+                                    <td>{x.lastname}</td>
+                                    <td>{x.email}</td>
+                                    <td>{x.comments}</td>
+                                    <td>{x.status}</td>
+                                    <td>
+                                        <Link to={`/admin_user_new/` + x.id}><button className="menu-item">Manage {x.id}</button></Link> 
+                                    </td>
+                                </tr>
+                                )
+                            }
+
+                        </table>
+                    </div>
+
+                    <div className="userhome-lower">
+                        <div className="newapps-group-label">Approved</div>
+                        <table className="blueTable">
+                            <tr>
+                                <th>Date Time</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Comments</th><th>Status</th><th>Action</th>
+                            </tr>
+                            {usersApproved  && usersApproved.map((x)=>
+                                <tr key={x.id}>
+                                    <td>{x.appdate}</td>
+                                    <td>{x.firstname}</td>
+                                    <td>{x.lastname}</td>
+                                    <td>{x.email}</td>
+                                    <td>{x.comments}</td>
+                                    <td>{x.status}</td>
+                                    <td>
+                                        <Link to={`/admin_user_new/` + x.id}><button className="menu-item">Manage {x.id}</button></Link> 
+                                    </td>
+                                </tr>
+                                )
+                            }
+
+                        </table>
+                    </div>
+                    <div className="userhome-lower">
+                        <div className="newapps-group-label">Rejected</div>
+                        <table className="blueTable">
+                            <tr>
+                                <th>Date Time</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Comments</th><th>Status</th><th>Action</th>
+                            </tr>
+                            {usersRejected  && usersRejected.map((x)=>
+                                <tr key={x.id}>
+                                    <td>{x.appdate}</td>
+                                    <td>{x.firstname}</td>
+                                    <td>{x.lastname}</td>
+                                    <td>{x.email}</td>
+                                    <td>{x.comments}</td>
+                                    <td>{x.status}</td>
+                                    <td>
+                                        <Link to={`/admin_user_new/` + x.id}><button className="menu-item">Manage {x.id}</button></Link> 
+                                    </td>
+                                </tr>
+                                )
+                            }
+
+                        </table>
+                    </div>                    
 
                 </div>
 
