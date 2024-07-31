@@ -67,22 +67,22 @@ const AdminUserApps=(props)=>{
     let usersVerified
     if(respData.users){
         console.log(respData)
-        usersVerified = respData.users.filter(function(el){ return el.status=='verified'});
+        usersVerified = respData.users.filter(function(el){ return el.status==='verified'});
     }
     let usersPending
     if(respData.users){
         console.log(respData)
-        usersPending = respData.users.filter(function(el){ return el.status=='pending'});
+        usersPending = respData.users.filter(function(el){ return el.status==='pending'});
     }    
     let usersApproved
     if(respData.users){
         console.log(respData)
-        usersApproved = respData.users.filter(function(el){ return el.status=='approved'});
+        usersApproved = respData.users.filter(function(el){ return el.status==='approved'});
     }    
     let usersRejected
     if(respData.users){
         console.log(respData)
-        usersRejected = respData.users.filter(function(el){ return el.status=='rejected'});
+        usersRejected = respData.users.filter(function(el){ return el.status==='rejected'});
     }    
 
     
@@ -148,7 +148,7 @@ const AdminUserApps=(props)=>{
                         <div className="newapps-group-label">Approved</div>
                         <table className="blueTable">
                             <tr>
-                                <th>Date Time</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Comments</th><th>Status</th><th>Action</th>
+                                <th>Date Time</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Comments</th><th>Status</th>
                             </tr>
                             {usersApproved  && usersApproved.map((x)=>
                                 <tr key={x.id}>
@@ -158,9 +158,6 @@ const AdminUserApps=(props)=>{
                                     <td>{x.email}</td>
                                     <td>{x.comments}</td>
                                     <td>{x.status}</td>
-                                    <td>
-                                        <Link to={`/admin_user_new/` + x.id}><button className="menu-item">Manage {x.id}</button></Link> 
-                                    </td>
                                 </tr>
                                 )
                             }

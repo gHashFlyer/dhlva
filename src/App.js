@@ -10,13 +10,17 @@ import FlyingNow from './pages/FlyingNow';
 import PilotStories from './pages/PilotStories';
 import JoinForm from './pages/Join';
 import JoinFormLanding from './pages/JoinLanding';
+//import AdminPirepInfo from './pages/AdminPirepInfo';
 //import AdminUserNew from './pages/AdminUserNew';
 
 {/* Authenticated pages */}
 // import UserHome from './pages/UserHome';
 const UserHome = React.lazy(() => import('./pages/UserHome'));
+const UserLogbook = React.lazy(() => import('./pages/UserLogbook'));
 const AdminUserApps = React.lazy(()=> import('./pages/AdminUserApps'))
 const AdminUserNew = React.lazy(()=> import('./pages/AdminUserNew'))
+const AdminPireps = React.lazy(()=> import('./pages/AdminPireps'))
+const AdminPirepInfo = React.lazy(()=> import('./pages/AdminPirepInfo'))
 
 function App() {
 
@@ -70,11 +74,14 @@ function App() {
         <Route path="/joinlanding" element={<JoinFormLanding /> } />
         <Route path="/login" element={ <Login appLogin={loginUpdate}/> } />
         <Route path="/userhome" element={ <UserHome appLogout={appLogout} fullname={fullName} callsign={callsign} loggedIn={loggedIn} userauth={userAuth}/> } />
+        <Route path="/userlogbook" element={ <UserLogbook appLogout={appLogout} fullname={fullName} callsign={callsign} loggedIn={loggedIn} userauth={userAuth}/> } />
         <Route path="/recentflights" element={ <RecentFlights /> } />
         <Route path="/flyingnow" element={ <FlyingNow /> } />
         <Route path="/pilotstories" element={ <PilotStories /> } />
         <Route path="/admin_user_apps" element= { <AdminUserApps/> } />
         <Route path="/admin_user_new/:id" element= { <AdminUserNew/> } />
+        <Route path="/admin_pireps" element= { <AdminPireps/> } />
+        <Route path="/admin_pirep_info/:id" element= { <AdminPirepInfo/> } />
 
     </Routes>
   </Suspense>

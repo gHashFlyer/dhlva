@@ -255,31 +255,38 @@ body{
 }
 .userhome-content{
   border: 2px dashed green;
+  height:100%;
 } 
 
 .userhome-upper{
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px dotted red;
+  border: 1px dotted red; */
   background-color: #40557D;
+
+  color: white;
+  padding:0.7rem;
 }
 
 .userhome-upper-block{
   color: white;
   background-color: #40557D;
+  margin-bottom:1rem;
+  padding:0rem;
 
 }
 
 .userhome-upper-block h1{
-  text-align: center;;
+  text-align: center;
   /* flex: 1 1 0; */
 }
 
 
 .userhome-header{
   background:#3d748f;
+  color:yellow;
 }
 
 .userhome-header-menu{
@@ -367,11 +374,12 @@ body{
   color: yellow;
 }
 
-/* ----------------------------- userhome table ----- */
+
 .userhome-lower{
   padding-top: 1.2rem;
   font-size: 0.75em;
 }
+
 table.blueTable {
   border: 1px solid #1C6EA4;
   background-color: #EEEEEE;
@@ -437,6 +445,243 @@ table.blueTable tfoot .links a{
   font-size: 11px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+table.blueTable td.button-group {
+  border: 1px dashed orange;
+  padding: 3px;
+  display: flex;
+}
+
+/* User Home Stats Table - start*/
+table.blueTable {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.blueTable tbody td {
+  font-size: 11px;
+}
+
+table.blueTable tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.blueTable thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.blueTable thead th {
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+table.blueTable tfoot {
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+table.blueTable tfoot td {
+  font-size: 11px;
+}
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.blueTable-td-right{
+  text-align: right;;
+}
+.blueTable-td-pirep{
+  font-size: 11px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table.blueTable td.button-group {
+  border: 1px dashed orange;
+  padding: 3px;
+  display: flex;
+}
+
+/* ----------------------------- userhome stats table ----- start */
+table.userhome-stats-table {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin-top:0.4rem;
+}
+table.userhome-stats-table td, table.userhome-stats-table th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+  width:33%;  
+}
+table.userhome-stats-table tbody td {
+  font-size: 15px;
+}
+
+
+table.userhome-stats-table  td:nth-child(even) {
+  text-align: center;
+}
+
+table.userhome-stats-table tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.userhome-stats-table thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.userhome-stats-table thead th {
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+table.userhome-stats-table thead th:first-child {
+  border-left: none;
+
+}
+
+table.userhome-stats-table tfoot {
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+table.userhome-stats-table tfoot td {
+  font-size: 11px;
+}
+table.userhome-stats-table tfoot .links {
+  text-align: right;
+}
+table.userhome-stats-table tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.userhome-stats-table-td-right{
+  text-align: right;
+}
+
+
+table.userhome-stats-table td.button-group {
+  border: 1px dashed orange;
+  padding: 3px;
+  display: flex;
+}
+
+/* ----------------------------- userhome stats table ----- stop  */
+
+
+
+
+
+
+
+
+
+/* Button used in admin pireps */
+.button-qza{
+  display: inline-block;
+  background-color: #71b8cc; /* #40557D;*/
+  color: black;
+  font-size: 10px;
+  padding: 0.5rem;
+  margin-right:1rem;
+  border-radius: 2px;
+  /* flex: 1 1 0;
+  width:0; */
+}
+.button-qza:hover{
+  color: yellow;
+  background: #40557D;
+}
+.button-qza a, a:visited, a:active{
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+.button-qza a:hover{
+  text-decoration: none;
+  color: yellow;
+}
+
+
+/* Button used is user logbook to bring up details page for user*/
+.button-user-logbook{
+  display: inline-flex;
+  background-color: #71b8cc; /* #40557D;*/
+  color: black;
+  padding: 0.2rem;
+  border-radius: 2px;
+  border: 2px dashed yellow;
+  font-size: 12px;
+
+  justify-content: center;
+  justify-items: center;
+
+  width:80%;
+  margin-left:8%;
+  
+
+}
+.button-user-logbook:hover{
+  color: yellow;
+  background: #40557D;
+}
+.button-user-logbook a, a:visited, a:active{
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+.button-user-logbook a:active{
+  text-decoration: none;
+  color: yellow;
+  background: greenyellow;
+  text-decoration: none;
+}
+
+.button-user-logbook a:hover{
+  text-decoration: none;
+  color: yellow;
+}
+
 
 .signup-form{
   width:64%;
