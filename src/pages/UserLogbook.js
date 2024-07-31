@@ -66,8 +66,9 @@ const UserLogbook=(props)=>{
     }
 
     function handleClick(e){
-        e.preventDefault()
-        console.log(e.currentTarget.id)
+        e.preventDefault();
+        console.log(e.currentTarget.id);
+        navigate("/user_log_detail/" + e.currentTarget.id);
     }
 
     return(
@@ -109,13 +110,12 @@ const UserLogbook=(props)=>{
 
                         <table className="blueTable">
                             <tr>
-                                {/* <th>Date</th><th>Depart</th><th>Arrive</th><th>Aircraft</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th> */}
-                                <th>logid</th><th>Date</th><th>Aircraft</th><th>Depart</th><th>Arrive</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th><th>Status</th>
+                                <th>🧐</th><th>Date</th><th>Aircraft</th><th>Depart</th><th>Arrive</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th><th>Status</th>
                             </tr>
                             {respData && respData.logbook.map((x)=>
 
                                 <tr>
-                                    <td className="button-user-logbook" id={x.id} onClick={handleClick}>{x.id}</td>
+                                    <td className="button-user-logbook" id={x.id} onClick={handleClick}>⊞</td>
                                     <td>{x.fdate}</td>
                                     <td>{x.aircraft}</td>
                                     <td>{x.orig}</td>

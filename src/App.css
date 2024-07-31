@@ -536,6 +536,7 @@ table.userhome-stats-table {
 }
 table.userhome-stats-table td, table.userhome-stats-table th {
   border: 1px solid #AAAAAA;
+  color: black;
   padding: 3px 2px;
   width:33%;  
 }
@@ -573,7 +574,7 @@ table.userhome-stats-table thead th:first-child {
 table.userhome-stats-table tfoot {
   font-size: 11px;
   font-weight: bold;
-  color: #FFFFFF;
+  color: #000;
   background: #D0E4F5;
   background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
   background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
@@ -644,22 +645,17 @@ table.userhome-stats-table td.button-group {
 
 /* Button used is user logbook to bring up details page for user*/
 .button-user-logbook{
-  display: inline-flex;
-  background-color: #71b8cc; /* #40557D;*/
+  /* display: block; */
+  background-color: #FFF;
   color: black;
   padding: 0.2rem;
   border-radius: 2px;
-  border: 2px dashed yellow;
-  font-size: 12px;
-
-  justify-content: center;
-  justify-items: center;
-
-  width:80%;
-  margin-left:8%;
-  
-
+  border: 5px dashed yellow;
+  font-size: 13px;
+  text-align: center;
+  text-decoration:none;
 }
+
 .button-user-logbook:hover{
   color: yellow;
   background: #40557D;
@@ -667,7 +663,7 @@ table.userhome-stats-table td.button-group {
 .button-user-logbook a, a:visited, a:active{
   text-decoration: none;
   color: white;
-  text-decoration: none;
+  
 }
 
 .button-user-logbook a:active{
