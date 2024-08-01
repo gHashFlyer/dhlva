@@ -12,6 +12,8 @@ import JoinForm from './pages/Join';
 import JoinFormLanding from './pages/JoinLanding';
 import Terms from './pages/Terms';
 import About from './pages/About';
+import Acars from './pages/Acars';
+import Discord from './pages/Discord';
 
 
 {/* Authenticated pages */}
@@ -87,6 +89,8 @@ function App() {
         <Route path="/admin_pirep_info/:id" element= { <AdminPirepInfo/> } />
         <Route path="/terms" element={<Terms/>} />
         <Route path="/roadmap" element={<About/>} />
+        <Route path="/acars" element={<Acars/>} />
+        <Route path="/discord" element={<Discord/>} />
 
     </Routes>
   </Suspense>
