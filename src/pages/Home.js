@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import {Link} from 'react-router-dom'
 
 import bg_image1 from "../images/bgimage.png"
-import bg_image2 from "../images/multi.png"
-import bg_image3 from "../images/green.png"
+import bg_image2 from "../images/bell407.jpg"
+import bg_image3 from "../images/bowmans.jpg"
 import bg_image4 from "../images/spray.png"
 
 const Home=(props)=>{
@@ -16,8 +16,6 @@ const Home=(props)=>{
         }
 
     }
-
-    console.log(props)
 
     return(
         <React.Fragment>
@@ -67,6 +65,11 @@ const Home=(props)=>{
                             {props.loggedIn && <Link to='/userhome'><button className="menu-item">My Dashboard</button></Link>}
                             {props.loggedIn && <Link to='/'><button onClick={handleLogout} className="menu-item">Logout</button></Link>}
                             {!props.loggedIn && <Link to='/login'><button className="menu-item">Login</button></Link>}
+                            <Link to='/roadmap'><button className="menu-item">Tours</button></Link>
+                            <Link to='/roadmap'><button className="menu-item">Missions</button></Link>
+                            <Link to='/roadmap'><button className="menu-item">Awards</button></Link>
+                            
+                            
                             
 
                         </div>

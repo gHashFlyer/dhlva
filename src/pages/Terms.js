@@ -10,10 +10,15 @@ const Terms=()=>{
             <div className="home">
 
                 <div className="home-section">
+                <div className="home-section-label">
+                <Link to='/joinform'><button className="header-menu-item">OK SOUNDS GOOD!</button></Link> 
+                    </div>                    
                     <div className="home-section-label">
-                    <Link to='/joinform'><button className="header-menu-item">back</button></Link>
+                    BE NICE - PLAY FAIR - DON'T BE STUPID
                     </div>
                     <div className="home-section-content">
+
+<h4>tl:dr</h4>
 
 TERMS OF USE
 

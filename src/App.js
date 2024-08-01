@@ -11,6 +11,7 @@ import PilotStories from './pages/PilotStories';
 import JoinForm from './pages/Join';
 import JoinFormLanding from './pages/JoinLanding';
 import Terms from './pages/Terms';
+import About from './pages/About';
 
 
 {/* Authenticated pages */}
@@ -85,6 +86,7 @@ function App() {
         <Route path="/admin_pireps" element= { <AdminPireps/> } />
         <Route path="/admin_pirep_info/:id" element= { <AdminPirepInfo/> } />
         <Route path="/terms" element={<Terms/>} />
+        <Route path="/roadmap" element={<About/>} />
 
     </Routes>
   </Suspense>

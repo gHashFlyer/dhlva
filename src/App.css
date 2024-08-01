@@ -98,21 +98,31 @@ body{
   background: #54627D;
   width:25vw;
   border-radius: 8px;
-
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .home-banner-b{
   background: #7D6840;
   width:25vw;
   border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .home-banner-c{
   background: #54627D;
   width:25vw;
   border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .home-banner img{
-  width:inherit;
+  /* display:block; */
+  /* width:auto;
+  height:100%; */
+  width: 100%;
+  height:12rem;
+  /* margin-left:auto;
+  margin-right:auto; */
+  border-radius: 4px;
+  object-fit:cover;
 }
 
 .home-banner-link{
@@ -130,6 +140,18 @@ body{
 }
 .home-section-content{
   font-size: 20px;
+  padding: 1rem;
+
+}
+
+.home-section-content ol{
+  color: black;
+  
+
+}
+
+.home-section-content ol li{
+  color: black;
   padding: 1rem;
 
 }
