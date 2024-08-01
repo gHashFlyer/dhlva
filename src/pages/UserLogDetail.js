@@ -23,9 +23,11 @@ const UserLogDetail = (props) => {
 
   const randx = Math.random();
 
+  console.log(props)
+
   
   useEffect(() => {
-      const postData = {"id":params.id}
+      const postData = {"id":params.id, "user":props.callsign}
       // console.log(postData)
       axios
         .post("https://vhog.net/api/get_pirep_details.php",JSON.stringify(postData))
@@ -78,19 +80,42 @@ const UserLogDetail = (props) => {
 
     const paramz = {
       id: params.id,
-      vhash: respData.vhash
-
+      vhash: respData.vhash,
+      user: props.callsign
     };
 
     console.log(paramz)
-    setFormData(paramz)
+    
+    if(window.confirm("Delete this pirep?")){
+      setFormData(paramz)
+    }
+
+
+
     
   }
 
   return (
     <React.Fragment>
+
+            <div className="userhome-header">
+                <div className="userhome-header-menu">
+                    {/* <Link to='/'><button className="userhome-header-menu-item">Home</button></Link>
+                    <Link to='/userhome'><button className="userhome-header-menu-item">Dashboard</button></Link> */}
+                    <Link to='/userlogbook'><button className="header-menu-item">Logbook</button></Link>
+                    {respData && respData.staff && respData.staff === 'CEO'? 
+                        <div>
+                        <Link to='/admin_user_apps'><button className="header-menu-item">Admin User Apps</button></Link>
+                        <Link to='/admin_pireps'><button className="header-menu-item">Admin Pireps</button></Link>
+                        </div>                        
+                    :""}
+
+
+                </div>
+            </div>
+
       <div className="userhome">
-        <Header title={`Log Details: logid=` + params.id} />
+        <Header title={`Log Details`} />
 
         <div className="userhome-content">
           <div className="userhome-lower">

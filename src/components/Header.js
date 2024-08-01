@@ -8,13 +8,6 @@ const Header = (props) => {
         <div className="header">
             <div className="header-menu">
             <div className="header-menu-pagetitle">{props.title}</div>
-                <Link to='/'><button className="header-menu-item">Home</button></Link>
-                <Link to='/userlogbook'><button className="header-menu-item">Logbook</button></Link>
-                {/* <Link to='/'><button className="header-menu-item"></button></Link> */}
-                {/* <Link to='/'><button className="header-menu-item">Home</button></Link>
-                <Link to='/'><button className="header-menu-item">Home</button></Link>
-                <Link to='/'><button className="header-menu-item">Home</button></Link> */}
-
             </div>
         </div>
     </React.Fragment>

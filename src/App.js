@@ -10,8 +10,8 @@ import FlyingNow from './pages/FlyingNow';
 import PilotStories from './pages/PilotStories';
 import JoinForm from './pages/Join';
 import JoinFormLanding from './pages/JoinLanding';
-//import AdminPirepInfo from './pages/AdminPirepInfo';
-//import AdminUserNew from './pages/AdminUserNew';
+import Terms from './pages/Terms';
+
 
 {/* Authenticated pages */}
 // import UserHome from './pages/UserHome';
@@ -64,14 +64,13 @@ function App() {
   const appLogout = () =>{
     localStorage.clear()
     setLoggedIn(false)
-
   }
 
 
   return (
   <Suspense fallback={<p>Loading...</p>}>
     <Routes>
-        <Route path="/" element={ <Home loggedIn={loggedIn} /> } />
+        <Route path="/" element={ <Home loggedIn={loggedIn} appLogout={appLogout} /> } />
         <Route path="/joinform" element={<JoinForm /> } />
         <Route path="/joinlanding" element={<JoinFormLanding /> } />
         <Route path="/login" element={ <Login appLogin={loginUpdate}/> } />
@@ -85,6 +84,7 @@ function App() {
         <Route path="/admin_user_new/:id" element= { <AdminUserNew/> } />
         <Route path="/admin_pireps" element= { <AdminPireps/> } />
         <Route path="/admin_pirep_info/:id" element= { <AdminPirepInfo/> } />
+        <Route path="/terms" element={<Terms/>} />
 
     </Routes>
   </Suspense>

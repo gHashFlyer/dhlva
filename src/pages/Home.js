@@ -10,6 +10,15 @@ const Home=(props)=>{
 
     //const [loggedIn, setLoggedIn] = useState(false)
 
+    function handleLogout(){
+        if(window.confirm("Ready to log out?")){
+            props.appLogout();
+        }
+
+    }
+
+    console.log(props)
+
     return(
         <React.Fragment>
             <div className="home">
@@ -39,7 +48,7 @@ const Home=(props)=>{
                         </p>
 
                         <div className="joinlink">
-                            {!props.loggedIn && <a href='/joinform'>Not a member? Click here to join us! </a>}
+                            {!props.loggedIn && <div className="joinus">Not a member? 👉 <a href='/joinform'>Click here to join us! </a></div>}
                         </div>
                         
 
@@ -56,6 +65,7 @@ const Home=(props)=>{
                             <Link to='/flyingnow'><button className="menu-item">Flying Now</button></Link>
                             <Link to='/pilotstories'><button className="menu-item">Join Us</button></Link> */}
                             {props.loggedIn && <Link to='/userhome'><button className="menu-item">My Dashboard</button></Link>}
+                            {props.loggedIn && <Link to='/'><button onClick={handleLogout} className="menu-item">Logout</button></Link>}
                             {!props.loggedIn && <Link to='/login'><button className="menu-item">Login</button></Link>}
                             
 

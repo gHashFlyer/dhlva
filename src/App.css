@@ -25,6 +25,11 @@ body{
 /* HEADER AND NAVIGATION MENUS */
 /* -------------------------------------------------------------------------------------------- */
 
+.joinus{
+  display:flex;
+  color: yellow;
+  font-size: 16px;;
+}
 
 .menu{
   background-color: var  (--menucolor);
@@ -338,6 +343,16 @@ body{
   padding:0.2rem;
 
 }
+
+.header-menu-pagetitle{
+  display: inline-block;
+  /* background-color: #40557D; */
+  color: white;
+  font-size: 18px;
+  padding: 10px 12px;
+  margin-right:2rem;
+  border-radius: 5px;
+}
 .header-menu-item{
   display: inline-block;
   background-color: #40557D;
@@ -349,19 +364,9 @@ body{
   /* flex: 1 1 0;
   width:0; */
 }
-.header-menu-pagetitle{
-  display: inline-block;
-  /* background-color: #40557D; */
-  color: white;
-  font-size: 18px;
-  padding: 10px 12px;
-  margin-right:2rem;
-  border-radius: 5px;
-}
-
 .header-menu-item:hover{
   color: yellow;
-  background: #40557D;
+  background: #182030;
 }
 .header-menu-item a, a:visited, a:active{
   text-decoration: none;
@@ -374,6 +379,17 @@ body{
   color: yellow;
 }
 
+.header-menu-item-admin{
+  display: inline-block;
+  background-color: #627d40;
+  color: white;
+  font-size: 15px;
+  padding: 10px 12px;
+  margin-right:2rem;
+  border-radius: 5px;
+  /* flex: 1 1 0;
+  width:0; */
+}
 
 .userhome-lower{
   padding-top: 1.2rem;

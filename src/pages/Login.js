@@ -28,8 +28,9 @@ const Login = (props) => {
                         props.appLogin(response.data);
                         navigate('/userhome', {replace:true});
                     }else{
-                        console.log("Login.js (31): invalid login")
-                        setErrorMessage("Invalid Login");
+                        console.log("login failed")
+                        setErrorMessage("login failed");
+                        window.alert("Invalid email address or password")
                     }
                 })
                 .catch(error=> {

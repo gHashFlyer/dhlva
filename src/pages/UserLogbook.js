@@ -76,19 +76,16 @@ const UserLogbook=(props)=>{
             
             <div className="userhome-header">
                 <div className="userhome-header-menu">
-                    <Link to='/'><button className="userhome-header-menu-item">Home</button></Link>
+                    {/* <Link to='/'><button className="userhome-header-menu-item">Home</button></Link> */}
+                    <Link to='/userhome'><button className="userhome-header-menu-item">Dashboard</button></Link>
                     {respData && respData.staff && respData.staff === 'CEO'? 
                         <div>
                         <Link to='/admin_user_apps'><button className="header-menu-item">Admin User Apps</button></Link>
                         <Link to='/admin_pireps'><button className="header-menu-item">Admin Pireps</button></Link>
                         </div>                        
-                    
                     :""}
 
-                    <Link to='/'><button onClick={handleLogout} className="userhome-header-menu-item">Logout</button></Link>                
-                    {/* <Link to='/'><button className="header-menu-item">Home</button></Link>
-                    <Link to='/'><button className="header-menu-item">Home</button></Link>
-                    <Link to='/'><button className="header-menu-item">Home</button></Link> */}
+
                 </div>
             </div>
 

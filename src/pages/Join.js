@@ -227,7 +227,7 @@ const JoinForm = (props) => {
                         <input className="signup-form-button"  onClick={handleFormSubmission} type='button' value='Submit' />
 
                         <div className="signup-form-disclaimer">
-                        By pressing the submit button you agree to our <a href='terms/terms.txt'>terms of use</a>.
+                        By pressing the submit button you agree to our <a href='/terms'>terms of use</a>.
                         </div>
                     </div>
                     }
