@@ -155,7 +155,7 @@ const UserHome=(props)=>{
                                 <tr>
                                     <td>
                                         <table className="userhome-stats-table">
-                                            <tr><td>Total Hover Hours</td><td>{respData.summary.total_hover}</td></tr>
+                                            <tr><td>Total Hover (minutes)</td><td>{respData.summary.total_hover}</td></tr>
                                             <tr><td>Precision Hover</td><td>{respData.summary.hover1}</td></tr>
                                             <tr><td>Commercial Hover</td><td>{respData.summary.hover2}</td></tr>
                                             <tr><td>General Hover</td><td>{respData.summary.hover3}</td></tr>

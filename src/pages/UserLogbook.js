@@ -71,6 +71,11 @@ const UserLogbook=(props)=>{
         navigate("/user_log_detail/" + e.currentTarget.id);
     }
 
+    function handleRow(e){
+        console.log(e.currentTarget.id)
+        navigate("/user_log_detail/" + e.currentTarget.id);
+    }
+
     return(
         <React.Fragment>
             
@@ -105,13 +110,13 @@ const UserLogbook=(props)=>{
                     
                     <div className="userhome-lower">
 
-                        <table className="blueTable">
+                        <table className="table-logbook">
                             <tr>
                                 <th>🧐</th><th>Date</th><th>Aircraft</th><th>Depart</th><th>Arrive</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th><th>Status</th>
                             </tr>
                             {respData && respData.logbook.map((x)=>
 
-                                <tr>
+                                <tr onClick={handleRow} id={x.id}>
                                     <td className="button-user-logbook" id={x.id} onClick={handleClick}>⊞</td>
                                     <td>{x.fdate}</td>
                                     <td>{x.aircraft}</td>

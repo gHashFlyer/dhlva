@@ -40,14 +40,14 @@ const Acars=()=>{
                         <div className="home-section-flex-right">
                             {/* <div className="home-section-flex-header">Downloads</div> */}
 
-                            <a href="https://fsacars.com/Version2H/acars_full.zip"><button className="download-button"></button></a>
+                            <a href="https://vhog.net/acars/acars_full.zip"><button className="download-button"></button></a>
 
 
                             <div className="tidymesg">
                                 Only if your acars needs an update: right-click the following button and save as, then Extract
                                 the contents to your existing acars folder.
                             </div>
-                            <a href="https://fsacars.com/Version2H/acars_update.zip"><button className="download-button-update">Update Acars</button></a>
+                            <a href="https://vhog.net/acars/acars_update.zip"><button className="download-button-update">Update Acars</button></a>
                         
 
                             <div className="uipc-links">

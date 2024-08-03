@@ -23,9 +23,7 @@ const UserLogDetail = (props) => {
 
   const randx = Math.random();
 
-  console.log(props)
-
-  
+   
   useEffect(() => {
       const postData = {"id":params.id, "user":props.callsign}
       // console.log(postData)
@@ -34,7 +32,7 @@ const UserLogDetail = (props) => {
         .then((response) => {
           
           if (response.data) {
-            //console.log(response);
+            console.log(response.data);
             setRespData(response.data);
           } else {
             console.log("...");
@@ -89,10 +87,13 @@ const UserLogDetail = (props) => {
     if(window.confirm("Delete this pirep?")){
       setFormData(paramz)
     }
+   
+  }
 
+  function handleManageOFX(e){
+    e.preventDefault()
+    console.log(e.currentTarget.id)
 
-
-    
   }
 
   return (
@@ -185,9 +186,9 @@ const UserLogDetail = (props) => {
               <tr>
                 <th>Takeoff Wind</th>
                 <th>HWC, XWC</th>
-                <th>Hover 1</th>
-                <th>Hover 2</th>
-                <th>Hover 3</th>
+                <th>Precision Hover</th>
+                <th>Commercial Hover</th>
+                <th>General Hover</th>
                 <th>TISA</th>                
               </tr>
               <tr>
@@ -282,6 +283,12 @@ const UserLogDetail = (props) => {
 
               <div className="newapps-user-actionarea">
                 <button id={params.id} onClick={handleDelete}>Delete</button>
+                {respData.origtype === "OFX" &&
+                  <button id='orig' onClick={handleManageOFX}>mgr orig</button>
+                }
+                {respData.desttype === "OFX" &&
+                  <button id='dest' onClick={handleManageOFX}>mgr dest</button>
+                }                
               
               </div>
 

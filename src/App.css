@@ -525,7 +525,7 @@ body{
   font-size: 0.75em;
 }
 
-table.blueTable {
+/* table.blueTable {
   border: 1px solid #1C6EA4;
   background-color: #EEEEEE;
   width: 100%;
@@ -596,8 +596,8 @@ table.blueTable td.button-group {
   padding: 3px;
   display: flex;
 }
+ */
 
-/* User Home Stats Table - start*/
 table.blueTable {
   border: 1px solid #1C6EA4;
   background-color: #EEEEEE;
@@ -752,6 +752,87 @@ table.userhome-stats-table td.button-group {
 
 /* ----------------------------- userhome stats table ----- stop  */
 
+/* ----------------------------- formats the user logbook ----- start  */
+table.table-logbook {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.table-logbook td, table.table-logbook th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.table-logbook tbody td {
+  font-size: 11px;
+}
+
+
+
+table.table-logbook tr:nth-child(even) {
+  background: #D0E4F5;
+}
+
+table.table-logbook tr:hover {
+  background: rgb(249, 159, 85);
+}
+
+
+table.table-logbook thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.table-logbook thead th {
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.table-logbook thead th:first-child {
+  border-left: none;
+}
+
+table.table-logbook tfoot {
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+table.table-logbook tfoot td {
+  font-size: 11px;
+}
+table.table-logbook tfoot .links {
+  text-align: right;
+}
+table.table-logbook tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.table-logbook-td-right{
+  text-align: right;;
+}
+.table-logbook-td-pirep{
+  font-size: 11px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table.table-logbook td.button-group {
+  border: 1px dashed orange;
+  padding: 3px;
+  display: flex;
+}
+/* ----------------------------- formats the user logbook ----- stop  */
 
 
 
