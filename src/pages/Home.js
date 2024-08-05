@@ -63,6 +63,7 @@ const Home=(props)=>{
                             <Link to='/flyingnow'><button className="menu-item">Flying Now</button></Link>
                             <Link to='/pilotstories'><button className="menu-item">Join Us</button></Link> */}
                             {props.loggedIn && <Link to='/userhome'><button className="menu-item">My Dashboard</button></Link>}
+                            {props.loggedIn && <Link to='/dailyflight'><button className="menu-item">Daily Flight</button></Link>}
                             {props.loggedIn && <Link to='/acars'><button className="menu-item">Acars</button></Link>}
                             {props.loggedIn && <Link to='/discord'><button className="menu-item">Discord</button></Link>}
                             {props.loggedIn && <Link to='/'><button onClick={handleLogout} className="menu-item">Logout</button></Link>}

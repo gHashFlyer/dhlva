@@ -183,61 +183,81 @@ const UserLogDetail = (props) => {
                 <td>{respData.payload}</td>
               </tr>
 
+
+
               <tr>
                 <th>Takeoff Wind</th>
-                <th>HWC, XWC</th>
-                <th>Precision Hover</th>
-                <th>Commercial Hover</th>
-                <th>General Hover</th>
+                <th>HWC</th>
+                <th>XWC</th>
+                <th></th>
+                <th></th>
                 <th>TISA</th>                
               </tr>
               <tr>
                 <td>{respData.windstart}</td>
-                <td>{respData.takeoffHWC}, {respData.takeoffXWC}</td>
-                <td>{respData.hover1}</td>
-                <td>{respData.hover2}</td>
-                <td>{respData.hover3}</td>
+                <td>{respData.takeoffHWC}</td>
+                <td>{respData.takeoffXWC}</td>
+                <td></td>
+                <td></td>
                 <td>{respData.tisa}</td>
               </tr>
 
               <tr>
                 <th>Landing Wind</th>
-                <th>HWC, XWC</th>
+                <th>HWC</th>
+                <th>XWC</th>
                 <th>FPM</th>
-                <th>KTS</th>
-                
-                <th>Heading</th>                
-                <th>Landing G</th>
+                <th></th>                
+                <th></th>
               </tr>
               <tr>
-                <td>{respData.windstop}</td>
-                <td>{respData.landHWC}, {respData.landXWC}</td>
+                <td>{respData.windstop} </td>
+                <td>{respData.landHWC}</td>
+                <td>{respData.landXWC}</td>
                 <td>{respData.multifpm}</td>
-                <td>{respData.landkts}</td>
-                <td>{respData.land_truehdg}</td>
+                <td></td>
+                <td></td>
                 <td>{respData.landg}</td>
               </tr>
 
               <tr>
-                <th>Enr Fuel</th>
-                <th>Taxi Fuel</th>
                 <th>Block Fuel</th>
+                <th>Enroute Fuel</th>
                 <th>Avg Wind Dir/Speed</th>
                 <th>Avg Headwind</th>
-                <th>MinMax G</th>                
+                <th>Min G</th>
+                <th>Max G</th>                
               </tr>
               <tr>
-                <td>{respData.enroutefuel}</td>
-                <td>{respData.taxifuel}</td>
                 <td>{respData.blockfuel}</td>
+                <td>{respData.enroutefuel}</td>
                 <td>{respData.wdavg} / {respData.wsavg}</td>
                 <td>{respData.hwavg}</td>
-                <td>{respData.gmin}, {respData.gmax}</td>
+                <td>{respData.gmin} </td>
+                <td>{respData.gmax}</td>
               </tr>
 
               <tr>
-                <th colSpan={3}>Mark 1</th>
-                <th colSpan={3}>Mark 2</th>
+                <th>Elapsed Time </th>
+                <th>Time Aloft</th>
+                <th>Night Log</th>
+                <th>Precision Hover</th>
+                <th>Commercial Hover</th>
+                <th>General Hover</th>                
+              </tr>
+              <tr>
+                <td>{respData.blocktime} </td>
+                <td>{respData.alofttime} </td>
+                <td>{respData.nightlog}</td>
+                <td>{respData.hover1}</td>
+                <td>{respData.hover2}</td>
+                <td>{respData.hover3}</td>
+              </tr>
+
+              
+              <tr>
+              {respData.m1lat !== '0' && <th colSpan={3}>Mark 1</th>}
+              {respData.m2lat !== '0' && <th colSpan={3}>Mark 2</th>}
               </tr>
               <tr>
                 <td colSpan={3}>
@@ -248,11 +268,14 @@ const UserLogDetail = (props) => {
                 </td>
               </tr>
 
+              
               <tr>
-                <td colSpan={99}>
-                  Pirep: {respData.pirep}
-                </td>
-              </tr>
+              <td colSpan={99}>
+                Pirep: {respData.pirep? respData.pirep: ""}
+              </td>
+            </tr>              
+              
+
 
               <tr>
                 <th></th>
@@ -281,7 +304,8 @@ const UserLogDetail = (props) => {
               </tr>
             </table>              
 
-              <div className="newapps-user-actionarea">
+
+              {/* <div className="newapps-user-actionarea">
                 <button id={params.id} onClick={handleDelete}>Delete</button>
                 {respData.origtype === "OFX" &&
                   <button id='orig' onClick={handleManageOFX}>mgr orig</button>
@@ -289,8 +313,7 @@ const UserLogDetail = (props) => {
                 {respData.desttype === "OFX" &&
                   <button id='dest' onClick={handleManageOFX}>mgr dest</button>
                 }                
-              
-              </div>
+              </div> */}
 
           </div>
         </div>

@@ -14,6 +14,7 @@ import Terms from './pages/Terms';
 import About from './pages/About';
 import Acars from './pages/Acars';
 import Discord from './pages/Discord';
+import DailyFlight from './pages/DailyFlight';
 
 
 {/* Authenticated pages */}
@@ -91,6 +92,7 @@ function App() {
         <Route path="/roadmap" element={<About/>} />
         <Route path="/acars" element={<Acars/>} />
         <Route path="/discord" element={<Discord/>} />
+        <Route path="/dailyflight" element={<DailyFlight/>} />
 
     </Routes>
   </Suspense>
