@@ -142,7 +142,7 @@ const UserLogDetail = (props) => {
               <tr>
                 <th>Flight</th>
                 <th>Type</th>
-                <th>Dist</th>
+                <th>TISA</th>
                 <th>Lat,Lon</th>
                 <th>Weight</th>
                 <th>Fuel</th>                
@@ -150,7 +150,7 @@ const UserLogDetail = (props) => {
               <tr>
                 <td>{respData.orig}</td>
                 <td>{respData.origtype}</td>
-                <td>{respData.origdist}</td>
+                <td>{respData.tisa} sec</td>
                 <td>{respData.lat1}, {respData.lon1}</td>
                 <td>{respData.takeoffwt}</td>
                 <td>{respData.fuelstart}</td>
@@ -160,7 +160,7 @@ const UserLogDetail = (props) => {
               <tr>
                 <td>{respData.dest}</td>
                 <td>{respData.desttype}</td>
-                <td>{respData.destdist}</td>
+                <td></td>
                 <td>{respData.lat2}, {respData.lon2}</td>
                 <td>{respData.landwt}</td>
                 <td>{respData.fuelstop}</td>
@@ -191,7 +191,7 @@ const UserLogDetail = (props) => {
                 <th>XWC</th>
                 <th></th>
                 <th></th>
-                <th>TISA</th>                
+                <th></th>                
               </tr>
               <tr>
                 <td>{respData.windstart}</td>
@@ -199,7 +199,7 @@ const UserLogDetail = (props) => {
                 <td>{respData.takeoffXWC}</td>
                 <td></td>
                 <td></td>
-                <td>{respData.tisa}</td>
+                <td></td>
               </tr>
 
               <tr>
@@ -207,17 +207,16 @@ const UserLogDetail = (props) => {
                 <th>HWC</th>
                 <th>XWC</th>
                 <th>FPM</th>
-                <th></th>                
-                <th></th>
+                <th>Direct NM</th>                
+                <th>Actual NM</th>
               </tr>
               <tr>
                 <td>{respData.windstop} </td>
                 <td>{respData.landHWC}</td>
                 <td>{respData.landXWC}</td>
                 <td>{respData.multifpm}</td>
-                <td></td>
-                <td></td>
-                <td>{respData.landg}</td>
+                <td>{respData.directnm}</td>
+                <td>{respData.actualnm}</td>
               </tr>
 
               <tr>

@@ -203,7 +203,9 @@ const DailyFlight=()=>{
                                         <br />
                                         Manifest: {resp.item}
                                         <br /><br /><br /><br /><br />
-                                        <pre>[ {resp.origid} - {resp.destid} ] DAILY FLIGHT</pre>
+                                        
+                                           Updated at {resp.utc}.  Fly only if able to submit flight report before top of hour.
+    
 
                                     </td>
                                 </tr>                                
