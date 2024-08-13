@@ -54,11 +54,12 @@ const RecentFlights=(props)=>{
                     <div className="userhome-lower">
                         <table className="blueTable">
                             <tr>
-                                <th>Date</th><th>Member</th><th>Depart</th><th>Arrive</th><th>Aircraft</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th>
+                                <th>id</th><th>Date</th><th>Member</th><th>Depart</th><th>Arrive</th><th>Aircraft</th><th className="blueTable-td-right">Time</th><th className="blueTable-td-right">NM</th>
                             </tr>
                             {respData && respData.logbook.map((x)=>
 
                                 <tr>
+                                <td>{x.logid}</td>
                                 <td>{x.fdate}</td>
                                 <td>{x.user}</td>
                                 <td>{x.oapt}</td>
