@@ -304,7 +304,7 @@ const UserLogDetail = (props) => {
             </table>              
 
 
-              {/* <div className="newapps-user-actionarea">
+              <div className="newapps-user-actionarea">
                 <button id={params.id} onClick={handleDelete}>Delete</button>
                 {respData.origtype === "OFX" &&
                   <button id='orig' onClick={handleManageOFX}>mgr orig</button>
@@ -312,7 +312,7 @@ const UserLogDetail = (props) => {
                 {respData.desttype === "OFX" &&
                   <button id='dest' onClick={handleManageOFX}>mgr dest</button>
                 }                
-              </div> */}
+              </div>
 
           </div>
         </div>

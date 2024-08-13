@@ -17,7 +17,7 @@ const RecentFlights=(props)=>{
       useEffect(() => {
 
         axios
-        .get("https://extrafly.net/api/get_recentflights.php?r=" + randx)
+        .get("https://vhog.net/api/get_recentflights.php?r=" + randx)
         .then((response)=>{
             setRespData(response.data)
             if(response.data){
@@ -40,6 +40,9 @@ const RecentFlights=(props)=>{
             
             {/* <Header appLogout = {props.appLogout}/> */}
             <div className="userhome">
+            <div className="home-section-label">
+                        <Link to='/'><button className="header-menu-item">back</button></Link> 
+                    </div>                    
                 <Header title={"Recent Flights"}/>
                 {/* <div className="userhome-topline">
                 </div> */}

@@ -5,7 +5,7 @@ import {Map, Marker, GeoJson} from 'pigeon-maps'
 
 import axios from "axios";
 
-const sdata = {lat1: 37.59202026, lon1:66.32088712, lat2:37.42120418, lon2:66.564945}
+//const sdata = {lat1: 37.59202026, lon1:66.32088712, lat2:37.42120418, lon2:66.564945}
 
 function getCenter(x){
     let lat = (x.origlat + x.destlat) / 2
@@ -13,16 +13,16 @@ function getCenter(x){
     return {lat: lat, lon:lon}
 }
 function getTypeDescrp(x){
-    if(x === "AP"){
+    if(x === "small_airport" || x === "medium_airport" || x === "large_airport"){
         return "Airport"
     }
-    if(x === "HP"){
+    if(x === "heliport"){
         return "Heliport"
     }    
-    if(x === "HHP"){
-        return "Hospital Heliport"
+    if(x === "hospital-heliport"){
+        return "Hospital"
     }    
-    if(x === "OIL"){
+    if(x === "oil-platform"){
         return "Oil Platform"
     }else{
         return "Off-Airport"
@@ -46,7 +46,7 @@ const DailyFlight=()=>{
             .post("https://vhog.net/api/get_dailyflight.php",JSON.stringify(vvx))
             // .get("https://vhog.net/api/get_dailyflight.php")
             .then((response)=>{
-                // console.log(response.data.dailyflight)
+                console.log(response.data.dailyflight)
                 setResp(response.data.dailyflight)
                 if(response.data.dailyflight){
                     const dfd = response.data.dailyflight

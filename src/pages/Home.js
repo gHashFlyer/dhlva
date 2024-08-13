@@ -57,28 +57,41 @@ const Home=(props)=>{
 
                 <div className="home-section">
                     <div className="home-section-label">OPERATIONS</div>
-                    <div className="home-section-content">
-                        <div className="menu">
-                            {/* <Link to='/recentflights'><button className="menu-item">Stats</button></Link>
-                            <Link to='/flyingnow'><button className="menu-item">Flying Now</button></Link>
-                            <Link to='/pilotstories'><button className="menu-item">Join Us</button></Link> */}
-                            {props.loggedIn && <Link to='/userhome'><button className="menu-item">My Dashboard</button></Link>}
-                            {props.loggedIn && <Link to='/dailyflight'><button className="menu-item">Daily Flight</button></Link>}
-                            {props.loggedIn && <Link to='/acars'><button className="menu-item">Acars</button></Link>}
-                            {props.loggedIn && <Link to='/discord'><button className="menu-item">Discord</button></Link>}
-                            {props.loggedIn && <Link to='/'><button onClick={handleLogout} className="menu-item">Logout</button></Link>}
-                            {!props.loggedIn && <Link to='/login'><button className="menu-item">Login</button></Link>}
-                            <Link to='/roadmap'><button className="menu-item">System Stats</button></Link>
-                            <Link to='/roadmap'><button className="menu-item">Flight Map</button></Link>
-                            <Link to='/roadmap'><button className="menu-item">Tours</button></Link>
-                            <Link to='/roadmap'><button className="menu-item">Missions</button></Link>
-                            <Link to='/roadmap'><button className="menu-item">Awards</button></Link>
-                            
-                            
-                            
-
+                        <div className="home-section-content">
+                            <div className="menu">
+                                {/* <Link to='/recentflights'><button className="menu-item">Stats</button></Link>
+                                <Link to='/flyingnow'><button className="menu-item">Flying Now</button></Link>
+                                <Link to='/pilotstories'><button className="menu-item">Join Us</button></Link> */}
+                                {props.loggedIn && <Link to='/userhome'><button className="menu-item">My Dashboard</button></Link>}
+                                {!props.loggedIn && <Link to='/login'><button className="menu-item">Login</button></Link>}
+                                {/* <Link to='/roadmap'><button className="menu-item">System Stats</button></Link>
+                                <Link to='/roadmap'><button className="menu-item">Flight Map</button></Link>
+                                <Link to='/roadmap'><button className="menu-item">Tours</button></Link>
+                                <Link to='/roadmap'><button className="menu-item">Missions</button></Link> */}
+                                <Link to='/roadmap'><button className="menu-item">Roadmap</button></Link>
+                                {props.loggedIn &&  <Link to='/recentflights'><button className="menu-item">Recent Flights</button></Link>}
+                            </div>
                         </div>
-                    </div>
+
+                        <div className="home-section-label">MEMBERS ONLY</div>
+                        <div className="home-section-content">
+                            <div className="menu">
+                                {/* <Link to='/recentflights'><button className="menu-item">Stats</button></Link>
+                                <Link to='/flyingnow'><button className="menu-item">Flying Now</button></Link>
+                                <Link to='/pilotstories'><button className="menu-item">Join Us</button></Link> */}
+                                {props.loggedIn && <Link to='/dailyflight'><button className="menu-item">Daily Flight</button></Link>}
+                                {props.loggedIn && <Link to='/acars'><button className="menu-item">Acars</button></Link>}
+                                {props.loggedIn && <Link to='/discord'><button className="menu-item">Discord</button></Link>}
+                                {props.loggedIn && <Link to='/'><button onClick={handleLogout} className="menu-item">Logout</button></Link>}
+                                
+                                {/* <Link to='/roadmap'><button className="menu-item">System Stats</button></Link>
+                                <Link to='/roadmap'><button className="menu-item">Flight Map</button></Link>
+                                <Link to='/roadmap'><button className="menu-item">Tours</button></Link>
+                                <Link to='/roadmap'><button className="menu-item">Missions</button></Link> */}
+                                
+                            </div>
+                        </div>
+
 
                 </div>
 

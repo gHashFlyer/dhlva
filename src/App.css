@@ -32,23 +32,25 @@ body{
 }
 
 .menu{
-  background-color: var  (--menucolor);
+  background-color: rgb(79, 85, 87);
   display: flex;
-  justify-content:left;
-  /* border-top:1px dashed white; */
   padding:0.2rem;
+  justify-content:flex-start;
+  
+  border-radius: 3px;
+  /* border-top:1px dashed white; */
+  
 
 }
 .menu-item{
   display: inline-block;
-  background-color: #7D6F54; /* #40557D;*/
+  background-color: #658aca;
   color: white;
   font-size: 15px;
   padding: 10px 12px;
-  margin-right:2rem;
   border-radius: 5px;
-  /* flex: 1 1 0;
-  width:0; */
+  margin-right:1rem;
+
 }
 .menu-item:hover{
   color: yellow;
@@ -254,18 +256,25 @@ body{
 
 .home-section-content ol{
   color: black;
+  list-style-type: none;
+  padding-left:0;
   
 
 }
 
 .home-section-content ol li{
-  color: black;
+  color: rgb(222, 222, 222);
+  padding: 1rem;
+
+}
+.home-section-content ol li.finished{
+  color: whitesmoke;
   padding: 1rem;
 
 }
 
 .home-section-content p{
-  border-bottom: 1px dotted silver;;
+  border-bottom: 1px dotted silver;
   padding-bottom:1rem;
 }
 
