@@ -15,6 +15,7 @@ import About from './pages/About';
 import Acars from './pages/Acars';
 import Discord from './pages/Discord';
 import DailyFlight from './pages/DailyFlight';
+import RandomFlight from './pages/RandomFlight';
 
 
 {/* Authenticated pages */}
@@ -93,6 +94,7 @@ function App() {
         <Route path="/acars" element={<Acars/>} />
         <Route path="/discord" element={<Discord/>} />
         <Route path="/dailyflight" element={<DailyFlight/>} />
+        <Route path="/randomflight" element={<RandomFlight/>} />
 
     </Routes>
   </Suspense>
