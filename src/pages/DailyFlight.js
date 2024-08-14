@@ -40,6 +40,8 @@ const DailyFlight=()=>{
     const vvx = {"A":1}
 
 
+    
+
     // When page loads get the data
     useEffect(() => {
             axios
@@ -115,7 +117,7 @@ const DailyFlight=()=>{
 
                 <div className="home-section">
                     <div className="home-section-label">
-                        <Link to='/'><button className="header-menu-item">[ back ]</button></Link> 
+                        <Link to='/' className="backbutton">&laquo; return</Link> 
                     </div>                    
                     <div className="home-section-label">
                         THE DAILY FLIGHT
@@ -154,7 +156,7 @@ const DailyFlight=()=>{
                             <table className="blueTable">
                                 <tr>
                                     <th>
-                                        Flight Details
+                                        Updated Hourly
                                     </th>
                                 </tr>
                                 <tr>
@@ -204,7 +206,7 @@ const DailyFlight=()=>{
                                         Manifest: {resp.item}
                                         <br /><br /><br /><br /><br />
                                         
-                                           Updated at {resp.utc}.  Fly only if able to submit flight report before top of hour.
+                                        For daily flight credit, submit your flight report by {resp.utc}
     
 
                                     </td>

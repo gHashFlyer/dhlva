@@ -42,9 +42,15 @@ const RandomFlight=()=>{
 
     const vvx = {"R":Math.random()}
 
-    let centerlat = 0
-    let centerlon = 0
 
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setRefresh(Math.random())
+            console.log("mmm")
+          }, 36000);
+      return () =>  clearTimeout(timeoutId);
+    }, [refresh])
+    
     
     // When page loads get the data
     useEffect(() => {
@@ -109,7 +115,7 @@ const RandomFlight=()=>{
 
                 <div className="home-section">
                     <div className="home-section-label">
-                        <Link to='/'><button className="header-menu-item">[ back ]</button></Link> 
+                        <Link to='/' className="backbutton">&laquo; return</Link>  
                     </div>                    
                     <div className="home-section-label">
                         Random Flight Generator

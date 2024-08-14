@@ -41,8 +41,8 @@ const RecentFlights=(props)=>{
             {/* <Header appLogout = {props.appLogout}/> */}
             <div className="userhome">
             <div className="home-section-label">
-                        <Link to='/'><button className="header-menu-item">back</button></Link> 
-                    </div>                    
+                <Link to='/' className="backbutton">&laquo; return</Link> 
+            </div>                    
                 <Header title={"Recent Flights"}/>
                 {/* <div className="userhome-topline">
                 </div> */}

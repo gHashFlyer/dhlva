@@ -11,7 +11,7 @@ const Discord=()=>{
 
                 <div className="home-section">
                     <div className="home-section-label">
-                        <Link to='/'><button className="header-menu-item">back</button></Link> 
+                    <Link to='/' className="backbutton">&laquo; return</Link> 
                     </div>                    
                     <div className="home-section-label">
                     Join us on Discord!

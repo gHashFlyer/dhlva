@@ -81,11 +81,11 @@ const Home=(props)=>{
                                 {/* <Link to='/recentflights'><button className="menu-item">Stats</button></Link>
                                 <Link to='/flyingnow'><button className="menu-item">Flying Now</button></Link>
                                 <Link to='/pilotstories'><button className="menu-item">Join Us</button></Link> */}
-                                <Link to='/dailyflight'><button className="menu-item">Daily Flight</button></Link>
-                                <Link to='/randomflight'><button className="menu-item">Random Flight</button></Link>
-                                <Link to='/acars'><button className="menu-item">Acars</button></Link>
-                                <Link to='/discord'><button className="menu-item">Discord</button></Link>
-                                <Link to='/'><button onClick={handleLogout} className="menu-item">Logout</button></Link>
+                                <Link className="menu-item" to='/dailyflight'><div>Daily Flight</div></Link>
+                                <Link className="menu-item" to='/randomflight'>Random Flight</Link>
+                                <Link className="menu-item" to='/acars'>Acars</Link>
+                                <Link className="menu-item" to='/discord'>Discord</Link>
+                                <Link className="menu-item" to='/' onClick={handleLogout}>Logout</Link>
                                 
                                 
                                 {/* <Link to='/roadmap'><button className="menu-item">System Stats</button></Link>
