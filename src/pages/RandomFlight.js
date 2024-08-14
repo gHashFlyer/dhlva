@@ -118,7 +118,7 @@ const RandomFlight=()=>{
                         <Link to='/' className="backbutton">&laquo; return</Link>  
                     </div>                    
                     <div className="home-section-label">
-                        Random Flight Generator
+                        Random Flight Generator {refresh}
                     </div>
 
 

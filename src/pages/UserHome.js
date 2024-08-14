@@ -139,7 +139,7 @@ const UserHome=(props)=>{
                         </table>
                         }
 
-
+{/* TABLE 2 */}
                         {respData.summary &&
                         <table className="userhome-stats-table">
                             <thead>
@@ -183,6 +183,52 @@ const UserHome=(props)=>{
 
                         </table>
                         }
+
+{/* TABLE 3 */}
+                        {respData.summary &&
+                        <table className="userhome-stats-table">
+                            <thead>
+                                <tr>
+
+                                    <th>Speed (kts)</th>
+                                    <th>Landings</th>
+                                    <th>Misc</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table className="userhome-stats-table">
+                                            <tr><td>Block Average Speed</td><td>{respData.summary.block_average_speed}</td></tr>
+                                            <tr><td>Aloft Average Speed</td><td>{respData.summary.aloft_average_speed}</td></tr>
+                                            <tr><td>reserved</td><td>~</td></tr>
+                                            <tr><td>reserved</td><td>~</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table className="blueTable">
+                                            <tr><td>Superior</td><td>{respData.summary.fpm_super}</td></tr>
+                                            <tr><td>Excellent</td><td>{respData.summary.fpm_excel}</td></tr>
+                                            <tr><td>Good</td><td>{respData.summary.fpm_good}</td></tr>
+                                            <tr><td>Fair</td><td>{respData.summary.fpm_fair}</td></tr>
+                                            
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table className="blueTable">
+                                            <tr><td>Daily Flights</td><td>{respData.summary.daily_flights}</td></tr>
+                                            <tr><td>Single-Skids</td><td>{respData.summary.singleskid}</td></tr>
+                                            <tr><td>Tailwind Landings</td><td>{respData.summary.tailwind_landings}</td></tr>
+                                            <tr><td>Quality Flights</td><td>{respData.summary.quality_flights}</td></tr>
+                                        </table>
+                                    </td>                                    
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        }
+
 
                     </div>
 
