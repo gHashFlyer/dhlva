@@ -126,6 +126,17 @@ body{
   font-size: 10px;
   color: rgb(255, 255, 255);
 }
+.home-section-flex-roadmap{
+  display: flex;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: space-evenly;
+}
+.home-section-flex-roadmap ol.left{
+  width:100%;
+}
+.home-section-flex-roadmap li{
+  padding: 0.5rem;
+}
 .download-button{
   background-color: rgb(53, 167, 53);
   border: none;
