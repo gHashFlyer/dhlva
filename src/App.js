@@ -19,7 +19,7 @@ import RandomFlight from './pages/RandomFlight';
 
 
 {/* Authenticated pages */}
-// import UserHome from './pages/UserHome';
+
 const UserHome = React.lazy(() => import('./pages/UserHome'));
 const UserLogbook = React.lazy(() => import('./pages/UserLogbook'));
 const UserLogDetail = React.lazy(() => import('./pages/UserLogDetail'));
@@ -27,6 +27,8 @@ const AdminUserApps = React.lazy(()=> import('./pages/AdminUserApps'))
 const AdminUserNew = React.lazy(()=> import('./pages/AdminUserNew'))
 const AdminPireps = React.lazy(()=> import('./pages/AdminPireps'))
 const AdminPirepInfo = React.lazy(()=> import('./pages/AdminPirepInfo'))
+const AdminUsers = React.lazy(()=> import('./pages/AdminUsers'))
+const AdminUsersEdit = React.lazy(()=> import('./pages/AdminUsersEdit'))
 
 
 function App() {
@@ -95,7 +97,8 @@ function App() {
         <Route path="/discord" element={<Discord/>} />
         <Route path="/dailyflight" element={<DailyFlight/>} />
         <Route path="/randomflight" element={<RandomFlight/>} />
-
+        <Route path="/adminusers" element={<AdminUsers/>} />
+        <Route path="/adminusers_edit/:id" element={<AdminUsersEdit/>} />
     </Routes>
   </Suspense>
   );

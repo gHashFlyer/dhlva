@@ -77,6 +77,7 @@ const UserHome=(props)=>{
                         <div>
                         <Link to='/admin_user_apps'><button className="header-menu-item-admin">Admin User Apps</button></Link>
                         <Link to='/admin_pireps'><button className="header-menu-item-admin">Admin Pireps</button></Link>
+                        <Link to='/adminusers'><button className="header-menu-item-admin">Admin Users</button></Link>
                         </div>                        
                     :""}
 

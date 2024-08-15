@@ -133,9 +133,12 @@ body{
 }
 .home-section-flex-roadmap ol.left{
   width:100%;
+  background:#007dc1;
+  color:white;
 }
 .home-section-flex-roadmap li{
   padding: 0.5rem;
+  
 }
 .download-button{
   background-color: rgb(53, 167, 53);
