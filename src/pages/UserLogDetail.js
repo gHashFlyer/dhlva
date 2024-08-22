@@ -162,7 +162,7 @@ const UserLogDetail = (props) => {
                 <td>{respData.desttype}</td>
                 <td></td>
                 <td>{respData.lat2}, {respData.lon2}</td>
-                <td>{respData.landwt}</td>
+                <td></td>
                 <td>{respData.fuelstop}</td>
               </tr>
 
@@ -191,7 +191,7 @@ const UserLogDetail = (props) => {
                 <th>XWC</th>
                 <th></th>
                 <th></th>
-                <th></th>                
+                <th>Daily Flight</th>                
               </tr>
               <tr>
                 <td>{respData.windstart}</td>
@@ -199,7 +199,7 @@ const UserLogDetail = (props) => {
                 <td>{respData.takeoffXWC}</td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>{respData.daily_flight}</td>
               </tr>
 
               <tr>
