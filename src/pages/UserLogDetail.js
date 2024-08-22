@@ -183,8 +183,6 @@ const UserLogDetail = (props) => {
                 <td>{respData.payload}</td>
               </tr>
 
-
-
               <tr>
                 <th>Takeoff Wind</th>
                 <th>HWC</th>
@@ -268,11 +266,11 @@ const UserLogDetail = (props) => {
               </tr>
 
               
-              <tr>
+            {/* <tr>
               <td colSpan={99}>
                 Pirep: {respData.pirep? respData.pirep: ""}
               </td>
-            </tr>              
+            </tr> */}
               
 
 

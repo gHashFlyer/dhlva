@@ -398,7 +398,9 @@ body{
 .userhome-content{
   font-size: 20px;
   padding: 1rem;
-
+  border: 2px dashed green;
+  height:100%;
+  overflow:hidden;
 }
 
 .userhome-topline{
@@ -413,10 +415,6 @@ body{
   padding:0;
 
 }
-.userhome-content{
-  border: 2px dashed green;
-  height:100%;
-} 
 
 .userhome-upper{
   /* display: flex;
@@ -445,19 +443,22 @@ body{
 
 
 .userhome-header{
+  position: sticky; top: 0;  /* why is this not working? */
   background:#3d748f;
   color:yellow;
 }
 
 .userhome-header-menu{
-  background-color: rgb(59, 59, 202);
   display: flex;
+  background-color: rgb(59, 59, 202);
+
   justify-content:left;
   /* border-top:1px dashed white; */
   padding:0.2rem;
 
 }
 .userhome-header-menu-item{
+  
   display: inline-block;
   background-color: #40557D;
   color: white;

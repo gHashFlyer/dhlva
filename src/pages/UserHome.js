@@ -69,33 +69,32 @@ const UserHome=(props)=>{
     return(
         <React.Fragment>
             
-            <div className="userhome-header">
-                <div className="userhome-header-menu">
-                    <Link to='/'><button className="userhome-header-menu-item">Home</button></Link>
-                    <Link to='/userlogbook'><button className="userhome-header-menu-item">Logbook</button></Link>
-                    {respData && respData.staff && respData.staff === 'CEO'? 
-                        <div>
-                        <Link to='/admin_user_apps'><button className="header-menu-item-admin">Admin User Apps</button></Link>
-                        <Link to='/admin_pireps'><button className="header-menu-item-admin">Admin Pireps</button></Link>
-                        <Link to='/adminusers'><button className="header-menu-item-admin">Admin Users</button></Link>
-                        </div>                        
-                    :""}
-
-                </div>
-            </div>
-
             <div className="userhome">
-                
+            
+                <div className="userhome-header">
+                    <div className="userhome-header-menu">
+                        <Link to='/'><button className="userhome-header-menu-item">Home</button></Link>
+                        <Link to='/userlogbook'><button className="userhome-header-menu-item">Logbook</button></Link>
+                        {respData && respData.staff && respData.staff === 'CEO'? 
+                            <div>
+                            <Link to='/admin_user_apps'><button className="header-menu-item-admin">Admin User Apps</button></Link>
+                            <Link to='/admin_pireps'><button className="header-menu-item-admin">Admin Pireps</button></Link>
+                            <Link to='/adminusers'><button className="header-menu-item-admin">Admin Users</button></Link>
+                            </div>                        
+                        :""}
+
+                    </div>
+                </div>
+
                 <div className="userhome-topline">
                     <h2>{props.callsign} - {props.fullname}</h2>
                 </div>
 
                 <div className="userhome-content">
-                
-                    
+
                     <div className="userhome-upper">
                         
-                    <div className="userhome-header">Career Summary</div>
+                    <div className="">Career Summary</div>
                         {respData.summary &&
                         <table className="userhome-stats-table">
                             <thead>
