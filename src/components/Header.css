@@ -1,0 +1,69 @@
+.header-menu{
+    margin: 0;
+    padding:0.4rem;
+    font-size: 1.3rem;
+  
+    background-color: #282c34;
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    color: white;    
+    border: solid 2px greenyellow;
+    
+    /* gap: 1.5rem; */
+    justify-content: space-around;
+
+    position: sticky;
+    /* flex-grow:1; */
+
+  }
+
+
+  .button_slide {
+    color: #fff;
+    border: 2px solid rgb(216, 2, 134);
+    background-color: #282c34;
+    border-color:beige;
+    border-radius: 1px;
+    padding: 4px 9px;
+    display: inline-block;
+    font-family: sans-serif, "Lucida Console", Monaco, monospace;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #61dafb;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    text-decoration: none;
+  }
+  .button_slide selected {
+    color: #fff;
+    border: 2px solid rgb(216, 2, 134);
+    background-color: #282c34;
+    border-color:beige;
+    border-radius: 1px;
+    border: 2px dashed yellow;
+    padding: 4px 9px;
+    display: inline-block;
+    font-family: sans-serif, "Lucida Console", Monaco, monospace;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #61dafb;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    text-decoration: none;
+  }
+  .button_slide_right:hover {
+    box-shadow: inset 400px 0 0 0 #000;
+  }
+
+  /* .selected{
+    border: 1px yellow dashed;
+    padding:2px;
+  
+  } */
