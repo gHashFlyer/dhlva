@@ -13,8 +13,11 @@ const Home = (props) => {
                 <Header page="Home" />
                 
                 <div className="home-body">
+                    <div className="home-content">
+                        <RandomQuote />
+                    </div>
                     
-                    <RandomQuote />
+                    
                 </div>
     
             </div>
