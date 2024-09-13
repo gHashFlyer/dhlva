@@ -15,16 +15,22 @@ const PositionCalc = (props) => {
 
     useEffect(() => {
         let x = localStorage.getItem("data")
-        x = JSON.parse(x)
-        console.log(x)
-        setData(x)
+        if(x){
+            x = JSON.parse(x)
+            if(x.info){
+                console.log(x)
+                setData(x)
+            }
+        }
 
         x = JSON.parse(localStorage.getItem("poscalc"))
         if(x){
-            const equity = x.equity
-            setEquity(equity)
-            const riskp = x.risk_percent
-            setRiskPercent(riskp)
+            if(x.equity){
+                const equity = x.equity
+                setEquity(equity)
+                const riskp = x.risk_percent
+                setRiskPercent(riskp)
+            }
         }
         console.log(x)
       return () => {}
@@ -59,12 +65,15 @@ const PositionCalc = (props) => {
 
         localStorage.setItem("poscalc", JSON.stringify(pscData) );
     }    
+
+
     return(
     <React.Fragment>
         <div className="poscalc">
             <Header page="PositionCalc"/>
             
             <div className="poscalc-body">
+                {!data && <div className="poscalc-form-header"> No Ticker </div>}
                 {data &&
                 
                 <form className="poscalc-form" onSubmit={handleForm}>

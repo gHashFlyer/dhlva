@@ -31,6 +31,10 @@ const Header = (props) => {
             p4.current.style.borderStyle = "dashed"
             p4.current.style.borderColor = "yellow"
         }                        
+        if(props.page === 'Trend'){
+            p4.current.style.borderStyle = "solid"
+            p4.current.style.borderColor = "cyan"
+        }                                
     
         return () => {}
     }, [props.page])
@@ -40,10 +44,10 @@ const Header = (props) => {
     <React.Fragment>
 
         <div className="header-menu">
-            <Link ref={p1} to="/"        className={className}>Home</Link>
-            <Link ref={p2} to="/trend"   className={className}>MMT</Link>
-            <Link ref={p3} to="/poscalc" className={className}>PSC</Link>
-            <Link ref={p4} to="/about"   className={className}>ABT</Link>
+            <Link ref={p1} to="../"        className={className}>Home</Link>
+            <Link ref={p2} to="../trend"   className={className}>MMT</Link>
+            <Link ref={p3} to="../poscalc" className={className}>PSC</Link>
+            <Link ref={p4} to="../about"   className={className}>ABT</Link>
         </div>
 
     </React.Fragment>)

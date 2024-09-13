@@ -1,11 +1,10 @@
 import React from "react";
 
-
-
 import './Home.css';
 
 import Header from "../components/Header";
 import RandomQuote from "./RandomQuote";
+
 
 const Home = (props) => {
     return(
@@ -14,6 +13,7 @@ const Home = (props) => {
                 <Header page="Home" />
                 
                 <div className="home-body">
+                    
                     <RandomQuote />
                 </div>
     
