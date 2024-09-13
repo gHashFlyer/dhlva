@@ -99,7 +99,7 @@ const Trend = (props) => {
     
     if(respData && respData.topics){
 
-        mmt = <div className="trend-results_mmt">{respData.info.ticker}🛑</div>
+        mmt = <div className="trend-results_mmt">🛑<p>undesirable trend</p></div>
         if(respData.technicals.mmt === 'yes'){
             let ud = respData.technicals.updays10
             let mmtd = respData.technicals.mmt_days
@@ -129,14 +129,14 @@ const Trend = (props) => {
                     <button disabled={busy?true:false} className="trend-form-button">GO</button>
                     <label className="trend-form-error">{errorMessage} {axiosError}</label>
                 </form>
-                {busy ? <div className='trend-form-busy'> -- busy --  </div> : ""}
-                {busy ? <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div> : ""}
+                {busy ? <div className='trend-form-busy'> -- working --  </div> : ""}
+                {busy ? <div className="lds-facebook"><div></div><div></div><div></div></div> : ""}
+
                 
                 <div className="trend-results">
                     {info}
                     <div className="trend-results-lower">
-                        {mmt}
-                    {/* {output} */}
+                        {mmt==='' && busy === false ? "NO DATA": mmt}
                     </div>                
                 </div>
 
