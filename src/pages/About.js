@@ -42,13 +42,27 @@ const About = (props) => {
 
                 <div className="about-item">
                     <div className="about-item-symbol">[PSC]</div>
-                    Position Size Calculator computes stop loss as the lesser of the price minus average true range and 2 standard deviations, or the price minus 8 percent.
-                    
+                    Position size is limited to 10% of equity
                 </div>                      
 
-                <div className="about-version">
-                    Version 1.0 by Garen Evans
+                <div className="about-item">
+                    <div className="about-item-symbol">[PSC]</div>
+                    S/L = stop loss price. Entry price minus average true range and 2 standard deviations, 
+                    or entry  price minus 8 percent, whichever is less.
                 </div>                      
+                <div className="about-item">
+                    <div className="about-item-symbol">[PSC]</div>
+                    TP = Take profit price, calculated at one percent of trading equity.
+                    RR = risk-to-reward ratio
+                </div>                                      
+
+                <div className="about-item">
+                    <div className="about-item-symbol">[Version]</div>
+                    Version 1.1 on 9/20/2024 by Garen Evans
+                </div>                      
+                {/* <div className="about-version">
+                    Version 1.0 by Garen Evans
+                </div>                       */}
 
             </div>
 

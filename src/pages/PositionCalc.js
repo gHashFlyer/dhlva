@@ -12,6 +12,9 @@ const PositionCalc = (props) => {
     const [shares, setShares] = useState(false)
     const [stoploss, setStoploss] = useState(false)
     const [stoplossPercent, setStoplossPercent] = useState(false)
+    const [equityPercent, setEquityPercent] = useState(false)
+    const [takeProfit, setTakeProfit] = useState(false)
+    const [riskRewardRatio, setRiskRewardRatio] = useState(false)
 
     useEffect(() => {
         let x = localStorage.getItem("data")
@@ -57,12 +60,46 @@ const PositionCalc = (props) => {
 
         let snum = Math.round(riskValue / (price - sl))
 
+        let cost = snum * price
+        let pct_equity = Math.round(10*  (100*cost/equity)  ) / 10
+        
+        // limit size of trade to 10% of equity
+        if(pct_equity > 10){
+            riskValue = equity * 0.10
+            snum = Math.round(riskValue / price )
+            slp = (sl - price) / price
+            if(slp < -0.080){
+                sl = 0.92 * price
+            }
+            sl = Math.round(sl*100,2)/100
+            slp = Math.round(10*100*Math.abs(slp))/10 //percent loss            
+
+            cost = snum * price
+            pct_equity = Math.round(10*  (100*cost/equity)  ) / 10            
+        }
+
+        // calculate a take profit price such that it will increase
+        // equity by one percent
+        let tp = ( cost  +  (0.01 * equity) ) / snum
+        tp = Math.round(tp * 100)/100
+        setTakeProfit(tp)
+    
+        // calculate risk to reward ratio
+        let risk = price - sl
+        let reward = tp - price
+        let rr = reward / risk
+        rr = Math.round(100 * rr) / 100
+        setRiskRewardRatio(rr)
+
+
         setShares(snum)
         setStoploss(sl)
         setStoplossPercent(slp)
+        setEquityPercent(pct_equity)
         
-        const pscData = {equity: equity, risk_percent: riskp}
+        const pscData = {equity: equity, risk_percent: riskp, cost: cost, pct_equity:pct_equity, takeprofit: takeProfit}
 
+        console.log(pscData)
         localStorage.setItem("poscalc", JSON.stringify(pscData) );
     }    
 
@@ -91,11 +128,18 @@ const PositionCalc = (props) => {
 
                     {shares && 
                         <div>
-                            <div className="poscalc-form-result">Shares: {shares}</div>
-                            <div className="poscalc-form-result">Stop Loss: {stoploss}</div>
-                            <div className="poscalc-form-result">Trade Risk: {stoplossPercent}%</div>
+                            <div className="poscalc-form-result">Shares: {shares} ({equityPercent}%)</div>
+                            <div className="poscalc-form-result">S/L {stoploss}  ({stoplossPercent}%)</div>
+                            <div className="poscalc-form-result">TP {takeProfit} RR{riskRewardRatio}</div>
                         </div>
                     }
+                    {!shares && 
+                        <div>
+                            <div className="poscalc-form-result">Max Pos Size 10%</div>
+                            <div className="poscalc-form-result">Max Stop Loss 8%</div>
+                            <div className="poscalc-form-result">Profit 1% Equity</div>
+                        </div>
+                    }                    
 
 
                     <button className="poscalc-form-button">CALCULATE</button>
