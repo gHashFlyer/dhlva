@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from 'react-router-dom';
 import './Home.css';
 
 import Header from "../components/Header";
@@ -15,8 +15,12 @@ const Home = (props) => {
                 <div className="home-body">
                     <div className="home-content">
                         <RandomQuote />
+                        <Link to="../settings">
+                            <button className="home-button">Settings</button>
+                        </Link>
+                        
                     </div>
-                    
+
                     
                 </div>
     

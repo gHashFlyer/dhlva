@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Minervini from "./pages/Minervini";
 import PositionCalc from "./pages/PositionCalc";
 import Trend from './pages/Trend';
+import Settings from './pages/Settings'
 
 // const router = createBrowserRouter([
 //   {path: '/', element: <Home/>},
@@ -29,6 +30,7 @@ function App() {
           <Route path="/poscalc" element={<PositionCalc/>} />
           <Route path="/mm" element={<Minervini/>} />
           <Route path="/trend" element={<Trend/>} />
+          <Route path="/settings" element={<Settings/>} />
       </Routes>
     </Suspense>
     );

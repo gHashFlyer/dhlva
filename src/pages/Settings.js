@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom';
 
-import "./PositionCalc.css";
+import "./Settings.css";
 
 import Header from "../components/Header";
 
-const PositionCalc = (props) => {
+const Settings = (props) => {
 
     const [equity, setEquity] = useState(10000)
     const [riskPercent, setRiskPercent] = useState(0.5)
@@ -118,42 +119,38 @@ const PositionCalc = (props) => {
 
     return(
     <React.Fragment>
-        <div className="poscalc">
+        <div className="settings">
             <Header page="PositionCalc"/>
             
-            <div className="poscalc-body">
-                {!data && <div className="poscalc-form-header"> No Ticker </div>}
+            <div className="settings-body">
+                {!data && <div className="settings-form-header"> No Ticker </div>}
                 {data &&
                 
-                <form className="poscalc-form" onSubmit={handleForm}>
+                <form className="settings-form" onSubmit={handleForm}>
 
-                    <div className="poscalc-form-header"> {data.info.ticker} {data.technicals.price}</div>
+                    <div className="settings-form-header">Settings</div>
 
-                    {shares && 
-                        <div>
-                            <div className="poscalc-form-result">Shares: {shares} ({equityPercent}%)</div>
-                            <div className="poscalc-form-result">S/L {stoploss}  ({stoplossPercent}%)</div>
-                            <div className="poscalc-form-result">TP {takeProfit} R:{riskRewardRatio}</div>
-                        </div>
-                    }
-                    {/* {!shares && 
-                        <div>
-                            <div className="poscalc-form-result"></div>
-                            <div className="poscalc-form-result"></div>
-                            <div className="poscalc-form-result"></div>
-                        </div>
-                    }                    
- */}
-                    <button className="poscalc-form-button">CALCULATE</button>
 
-                    <div className="poscalc-form-label">Entry Price</div>
-                    <input required className="poscalc-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={data.technicals.price}/>
+                    <div className="settings-form-label">Trading Equity</div>
+                    <input required className="settings-form-input" type="text" placeholder="trading equity" id="equity" name="equity" defaultValue={equity} />
 
-                    <div className="poscalc-form-label">Trading Equity</div>
-                    <input autoFocus required className="poscalc-form-input" type="text" placeholder="trading equity" id="equity" name="equity" defaultValue={equity} />
+                    <div className="settings-form-label">Max Trade Position (%)</div>
+                    <input required className="settings-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={"10"}/>
+                    
+                    <div className="settings-form-label">Equity Risk (%)</div>
+                    <input required className="settings-form-input" type="text" placeholder="percent risk" id="riskpercent" name="risk_percent" defaultValue={riskPercent} />
 
-                    <div className="poscalc-form-label">Equity Risk (%)</div>
-                    <input required className="poscalc-form-input" type="text" placeholder="percent risk" id="riskpercent" name="risk_percent" defaultValue={riskPercent} />
+
+
+                    <div className="settings-form-label">Max Trade Risk (%)</div>
+                    <input required className="settings-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={"8"}/>
+
+                    <div className="settings-form-label">Risk:Reward (1:x)</div>
+                    <input required className="settings-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={"auto"}/>
+
+
+
+                    <button className="settings-form-button">Save Settings</button>
 
 
 
@@ -171,4 +168,4 @@ const PositionCalc = (props) => {
 }
 
 
-export default PositionCalc;
+export default Settings;

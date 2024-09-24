@@ -1,0 +1,115 @@
+.settings{
+    width: 100vw;
+    height:100vh;
+
+
+    background: linear-gradient(90deg,rgba(130, 130, 130, 1) 0%, #050C3D 100%);
+    /* flex-grow: 1; */
+
+
+  }
+
+.settings-header {
+    margin: 0;
+    padding:0.4em;
+    font-size: 2em;
+  
+    background-color: #282c34;
+  
+
+    align-items: center;
+    /* justify-content: center; */
+    /* font-size: calc(10px + 2vmin); */
+    color: white;
+  }
+  
+  .settings-body{
+    
+    padding-top:1.2rem;
+    
+    /* align-items: center;
+    align-self: center;
+    align-content: center; */
+    justify-content: space-around;
+    /* align-content:space-around; */
+    width:100%;
+    
+  }
+
+  .settings-form{
+    background-color: transparent;
+  }
+
+  .settings-form-label{
+    width: 100%;
+    padding: 0.6rem;
+    padding-left:1rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    resize: vertical;
+    font-size: 1.5rem;
+    text-align: left;
+    background-color: rgb(27, 144, 144);
+  }
+  .settings-form input[type=text], select, textarea{
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    resize: vertical;
+    font-size: 1.2rem;    
+    /* margin-left:0.7rem; */
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+
+    
+  }
+
+
+  .settings-form-header{
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    resize: vertical;
+    font-size: 2rem;
+    text-align: center;
+    background-color: rgb(9, 37, 37);    
+    color:aliceblue
+  }
+
+  .settings-form-result{
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    resize: vertical;
+    font-size: 2rem;
+    text-align: center;
+    background-color: rgb(9, 37, 37);    
+    color:aliceblue
+  }
+
+  .settings-form-button{
+    display:block;
+    background-color: #144231;
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer;
+    margin:auto;
+    margin-top:0.5rem;
+    margin-bottom: 2rem;
+
+  }
+
+  .settings-form-button:hover{
+    display:block;
+    background-color: #ff55ff;
+    color: rgb(5, 2, 2);
+    padding: 12px 20px;
+    cursor: pointer;
+    margin:auto;
+    margin-top:0.5rem;
+    margin-bottom: 2rem;
+
+  }
