@@ -49,7 +49,7 @@ const PositionCalc = (props) => {
         
         let riskp = equityRisk
         let riskValue = equity * riskp/100
-        let price = e.target.entry_price.value
+        let price = parseFloat(e.target.entry_price.value)
         let atr = data.technicals.atr
         let sdtr = data.technicals.sdtr
 
@@ -81,14 +81,17 @@ const PositionCalc = (props) => {
 
         let cost = snum * price
         let pct_equity = Math.round(10*  (100*cost/equity)  ) / 10
+
+        console.log(pct_equity)
         
-        // limit size of trade to 10% of equity
-        if(pct_equity > 10){
-            riskValue = equity * 0.10
+        // limit size of trade to fullPosition% of equity
+        const fp = fullPosition / 100
+        if(pct_equity > fullPosition){
+            riskValue = equity * fp
             snum = Math.round(riskValue / price )
             slp = (sl - price) / price
-            if(slp < -0.080){
-                sl = 0.92 * price
+            if(slp < maxsl){
+                sl = invsl * price
             }
             sl = Math.round(sl*100,2)/100
             slp = Math.round(10*100*Math.abs(slp))/10 //percent loss            
@@ -96,21 +99,28 @@ const PositionCalc = (props) => {
             cost = snum * price
             pct_equity = Math.round(10*  (100*cost/equity)  ) / 10            
         }
-
+        
         // calculate a take profit price such that it will increase
-        // equity by one percent
-        let tp = ( cost  +  (0.01 * equity) ) / snum
-        tp = Math.round(tp * 100)/100
-        setTakeProfit(tp)
+        // equity by one percent, unless riskReward !== 'automatic'
+        let tp
+        if(riskReward === 'automatic'){
+            tp = ( cost  +  (0.01 * equity) ) / snum
+            tp = Math.round(tp * 100)/100
+            setTakeProfit(tp)
+        }else{
+            tp = (price+(3*(price-sl)))
+            tp = Math.round(tp * 100)/100
+            setTakeProfit(tp)            
+        }
+
     
         // calculate risk to reward ratio
         let risk = price - sl
         let reward = tp - price
         let rr = reward / risk
-        rr = Math.round(100 * rr) / 100
-        setRiskRewardRatio(rr)
-        console.log(slp)
+        rr = Math.round(10 * rr) / 10
 
+        setRiskRewardRatio(rr)
         setShares(snum)
         setStoploss(sl)
         setStoplossPercent(slp)
@@ -150,7 +160,8 @@ const PositionCalc = (props) => {
                         <div>
                             <div className="poscalc-form-result">Shares: {shares} ({equityPercent}%)</div>
                             <div className="poscalc-form-result">S/L {stoploss}  ({stoplossPercent}%)</div>
-                            <div className="poscalc-form-result">TP {takeProfit} R:{riskRewardRatio}</div>
+                            <div className="poscalc-form-result">T/P {takeProfit}</div>
+                            <div className="poscalc-form-result">RRR {riskRewardRatio}</div>
                         </div>
                     }
 

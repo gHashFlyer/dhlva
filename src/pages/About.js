@@ -41,24 +41,22 @@ const About = (props) => {
                 </div>                                
 
                 <div className="about-item">
-                    <div className="about-item-symbol">[PSC]</div>
-                    Position size is limited to 10% of equity
+                    <div className="about-item-symbol">S/L</div>
+                    Stop loss price is entry minus ATR and 2 standard deviations, or based on Max Stop Loss, whichever is smaller.
                 </div>                      
 
                 <div className="about-item">
-                    <div className="about-item-symbol">[PSC]</div>
-                    S/L = stop loss price. Entry price minus average true range and 2 standard deviations, 
-                    or entry  price minus 8 percent, whichever is less.
+                    <div className="about-item-symbol">T/P</div>
+                        Take profit price, calculated at one percent of trading equity, or based on Risk:Reward, if set.
                 </div>                      
                 <div className="about-item">
-                    <div className="about-item-symbol">[PSC]</div>
-                    TP = Take profit price, calculated at one percent of trading equity.
-                    RR = risk-to-reward ratio
+                    <div className="about-item-symbol">RRR</div>
+                    risk-to-reward ratio
                 </div>                                      
 
                 <div className="about-item">
-                    <div className="about-item-symbol">[Version]</div>
-                    Version 1.1 on 9/20/2024 by Garen Evans
+                    <div className="about-item-symbol">Version 1.2</div>
+                     9/25/2024 by Garen Evans
                 </div>                      
                 {/* <div className="about-version">
                     Version 1.0 by Garen Evans
