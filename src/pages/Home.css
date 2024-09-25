@@ -21,15 +21,34 @@
 }
 
 .home-body{
-  
   padding-top:2em;
-
   height:100%;
   
 }
 
 .home-content{
   padding:1rem;
+}
+
+.home-settings{
+border:2px dashed rgb(109, 255, 109);
+margin:auto;
+margin-top:2rem;
+margin-bottom: 2rem;
+width:fit-content;
+padding:0.5rem;
+
+}
+
+.home-link{
+  text-decoration: none;
+  color:yellow;
+}
+
+.home-link:hover{
+  text-decoration: none;
+  background:ffffff22;
+  color:yellow;
 }
 
 

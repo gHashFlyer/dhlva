@@ -15,9 +15,14 @@ const Home = (props) => {
                 <div className="home-body">
                     <div className="home-content">
                         <RandomQuote />
-                        <Link to="../settings">
-                            <button className="home-button">Settings</button>
-                        </Link>
+                        
+                        <div className="home-settings">
+                            <Link className="home-link" to="../settings">Settings</Link>
+
+
+                            {/* <button className="home-button">Settings</button> */}
+                        </div>
+
                         
                     </div>
 

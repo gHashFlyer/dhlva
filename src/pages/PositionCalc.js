@@ -7,7 +7,11 @@ import Header from "../components/Header";
 const PositionCalc = (props) => {
 
     const [equity, setEquity] = useState(10000)
-    const [riskPercent, setRiskPercent] = useState(0.5)
+    const [fullPosition, setFullPosition] = useState(10)
+    const [equityRisk, setEquityRisk] = useState(0.5)
+    const [maxStoploss, setMaxStopLoss] = useState(8)
+    const [riskReward, setRiskReward] = useState('automatic')
+
     const [data, setData] = useState(false);
     const [shares, setShares] = useState(false)
     const [stoploss, setStoploss] = useState(false)
@@ -26,13 +30,14 @@ const PositionCalc = (props) => {
             }
         }
 
-        x = JSON.parse(localStorage.getItem("poscalc"))
+        x = JSON.parse(localStorage.getItem("settings"))
         if(x){
             if(x.equity){
-                const equity = x.equity
-                setEquity(equity)
-                const riskp = x.risk_percent
-                setRiskPercent(riskp)
+                setEquity(x.equity)
+                setFullPosition(x.full_position)
+                setEquityRisk(x.equity_risk)
+                setMaxStopLoss(x.max_stoploss)
+                setRiskReward(x.risk_reward)
             }
         }
         console.log(x)
@@ -41,8 +46,8 @@ const PositionCalc = (props) => {
 
     function handleForm(e){
         e.preventDefault();
-        let equity = e.target.equity.value
-        let riskp = e.target.risk_percent.value
+        
+        let riskp = equityRisk
         let riskValue = equity * riskp/100
         let price = e.target.entry_price.value
         let atr = data.technicals.atr
@@ -54,10 +59,14 @@ const PositionCalc = (props) => {
         // Limit stop loss to no more than 8% loss
         let slp = (sl - price) / price
 
+
+        const maxsl = -maxStoploss / 100
+        const invsl = 1 - (maxStoploss/100)
+
         console.log(slp)
-        if(slp < -0.080){
+        if(slp < maxsl){
             console.log(sl)
-            sl = 0.92 * price
+            sl = invsl * price
             slp = (sl - price) / price
         }
 
@@ -109,10 +118,10 @@ const PositionCalc = (props) => {
 
         
         
-        const pscData = {equity: equity, risk_percent: riskp, cost: cost, pct_equity:pct_equity, takeprofit: takeProfit}
+        // const pscData = {equity: equity, risk_percent: riskp, cost: cost, pct_equity:pct_equity, takeprofit: takeProfit}
 
-        console.log(pscData)
-        localStorage.setItem("poscalc", JSON.stringify(pscData) );
+        // console.log(pscData)
+        // localStorage.setItem("poscalc", JSON.stringify(pscData) );
     }    
 
 
@@ -123,11 +132,19 @@ const PositionCalc = (props) => {
             
             <div className="poscalc-body">
                 {!data && <div className="poscalc-form-header"> No Ticker </div>}
+
                 {data &&
-                
+
                 <form className="poscalc-form" onSubmit={handleForm}>
 
-                    <div className="poscalc-form-header"> {data.info.ticker} {data.technicals.price}</div>
+                    <div className="poscalc-form-header"> 
+                    <div>{data.info.ticker} </div>
+                    <div>
+                        <input required className="poscalc-form-price" type="text" placeholder="price" id="entry" name="entry_price"  defaultValue={data.technicals.price}/>
+                    </div>
+                    
+
+                    </div>
 
                     {shares && 
                         <div>
@@ -136,28 +153,12 @@ const PositionCalc = (props) => {
                             <div className="poscalc-form-result">TP {takeProfit} R:{riskRewardRatio}</div>
                         </div>
                     }
-                    {/* {!shares && 
-                        <div>
-                            <div className="poscalc-form-result"></div>
-                            <div className="poscalc-form-result"></div>
-                            <div className="poscalc-form-result"></div>
-                        </div>
-                    }                    
- */}
+
                     <button className="poscalc-form-button">CALCULATE</button>
 
-                    <div className="poscalc-form-label">Entry Price</div>
-                    <input required className="poscalc-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={data.technicals.price}/>
+                    {/* <div className="poscalc-form-label">Entry Price</div>
+                    <input required className="poscalc-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={data.technicals.price}/> */}
 
-                    <div className="poscalc-form-label">Trading Equity</div>
-                    <input autoFocus required className="poscalc-form-input" type="text" placeholder="trading equity" id="equity" name="equity" defaultValue={equity} />
-
-                    <div className="poscalc-form-label">Equity Risk (%)</div>
-                    <input required className="poscalc-form-input" type="text" placeholder="percent risk" id="riskpercent" name="risk_percent" defaultValue={riskPercent} />
-
-
-
-                    
                 </form>
                 }
 

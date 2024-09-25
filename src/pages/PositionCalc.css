@@ -52,20 +52,41 @@
     background-color: rgb(27, 144, 144);
   }
   .poscalc-form input[type=text], select, textarea{
-    width: 100%;
+    /* width: 100%; */
     padding: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 2px;
     resize: vertical;
     font-size: 2rem;    
     margin-left:0.7rem;
-    background-color: rgb(250, 250, 250);
+    background-color:  rgb(9, 37, 37);  
+    color: cyan;
+    text-align: center;
 
     
   }
+  
 
 
   .poscalc-form-header{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    
+    
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    resize: vertical;
+    font-size: 2rem;
+    text-align: center;
+    background-color: rgb(9, 37, 37);    
+    color:aliceblue;
+
+  }
+  .poscalc-form-price input[type=text]{
+
     width: 100%;
     padding: 0.6rem;
     border: 1px solid #ccc;

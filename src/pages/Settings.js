@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom';
 
 import "./Settings.css";
 
@@ -7,124 +6,74 @@ import Header from "../components/Header";
 
 const Settings = (props) => {
 
-    const [equity, setEquity] = useState(10000)
-    const [riskPercent, setRiskPercent] = useState(0.5)
-    const [data, setData] = useState(false);
-    const [shares, setShares] = useState(false)
-    const [stoploss, setStoploss] = useState(false)
-    const [stoplossPercent, setStoplossPercent] = useState(false)
-    const [equityPercent, setEquityPercent] = useState(false)
-    const [takeProfit, setTakeProfit] = useState(false)
-    const [riskRewardRatio, setRiskRewardRatio] = useState(false)
+    const [equity, setEquity] = useState()
+    const [fullPosition, setFullPosition] = useState()
+    const [equityRisk, setEquityRisk] = useState()
+    const [maxStoploss, setMaxStopLoss] = useState()
+    const [riskReward, setRiskReward] = useState()
+    const [checked, setChecked] = useState(true)
 
     useEffect(() => {
-        let x = localStorage.getItem("data")
-        if(x){
-            x = JSON.parse(x)
-            if(x.info){
-                console.log(x)
-                setData(x)
-            }
-        }
-
-        x = JSON.parse(localStorage.getItem("poscalc"))
+        const x = JSON.parse(localStorage.getItem("settings"))
         if(x){
             if(x.equity){
-                const equity = x.equity
-                setEquity(equity)
-                const riskp = x.risk_percent
-                setRiskPercent(riskp)
+                
+                setEquity(x.equity)
+                setFullPosition(x.full_position)
+                setEquityRisk(x.equity_risk)
+                setMaxStopLoss(x.max_stoploss)
+                setRiskReward(x.risk_reward)
+
+                if(x.risk_reward !== 'automatic'){
+                    setChecked(false)
+                }
             }
+        }else{
+            // Set default values
+            setEquity(10000)
+            setFullPosition(10)
+            setEquityRisk(0.5)
+            setMaxStopLoss(8)
+            setRiskReward('automatic') 
         }
         console.log(x)
+        
       return () => {}
     }, [])
 
     function handleForm(e){
         e.preventDefault();
         let equity = e.target.equity.value
-        let riskp = e.target.risk_percent.value
-        let riskValue = equity * riskp/100
-        let price = e.target.entry_price.value
-        let atr = data.technicals.atr
-        let sdtr = data.technicals.sdtr
+        let full_position = e.target.full_position.value
+        let equity_risk = e.target.equity_risk.value
+        let max_stoploss = e.target.max_stoploss.value
+        let risk_reward = e.target.risk_reward.value
 
-        let sl = price - (atr + 2 * sdtr)
-
-
-        // Limit stop loss to no more than 8% loss
-        let slp = (sl - price) / price
-
-        console.log(slp)
-        if(slp < -0.080){
-            console.log(sl)
-            sl = 0.92 * price
-            slp = (sl - price) / price
-        }
-
-
-        
-        sl = Math.round(sl*100,2)/100
-        slp = Math.round(10*100*Math.abs(slp))/10 //percent loss
-
-        console.log(slp)
-
-        let snum = Math.round(riskValue / (price - sl))
-
-        let cost = snum * price
-        let pct_equity = Math.round(10*  (100*cost/equity)  ) / 10
-        
-        // limit size of trade to 10% of equity
-        if(pct_equity > 10){
-            riskValue = equity * 0.10
-            snum = Math.round(riskValue / price )
-            slp = (sl - price) / price
-            if(slp < -0.080){
-                sl = 0.92 * price
-            }
-            sl = Math.round(sl*100,2)/100
-            slp = Math.round(10*100*Math.abs(slp))/10 //percent loss            
-
-            cost = snum * price
-            pct_equity = Math.round(10*  (100*cost/equity)  ) / 10            
-        }
-
-        // calculate a take profit price such that it will increase
-        // equity by one percent
-        let tp = ( cost  +  (0.01 * equity) ) / snum
-        tp = Math.round(tp * 100)/100
-        setTakeProfit(tp)
-    
-        // calculate risk to reward ratio
-        let risk = price - sl
-        let reward = tp - price
-        let rr = reward / risk
-        rr = Math.round(100 * rr) / 100
-        setRiskRewardRatio(rr)
-        console.log(slp)
-
-        setShares(snum)
-        setStoploss(sl)
-        setStoplossPercent(slp)
-        setEquityPercent(pct_equity)
-
-        
-        
-        const pscData = {equity: equity, risk_percent: riskp, cost: cost, pct_equity:pct_equity, takeprofit: takeProfit}
-
-        console.log(pscData)
-        localStorage.setItem("poscalc", JSON.stringify(pscData) );
+        const obj = {equity: equity, full_position: full_position, equity_risk: equity_risk, max_stoploss:max_stoploss, risk_reward: risk_reward}
+        console.log(obj)
+        localStorage.setItem("settings", JSON.stringify( obj ) );
     }    
+
+    function handleCheckbox(){
+        if(checked){
+            setRiskReward('3.0')
+            setChecked(!checked)
+        }else{
+            setRiskReward(0)
+        }
+
+        setChecked(!checked)            
+
+    }
 
 
     return(
     <React.Fragment>
         <div className="settings">
-            <Header page="PositionCalc"/>
+            <Header page=""/>
             
             <div className="settings-body">
-                {!data && <div className="settings-form-header"> No Ticker </div>}
-                {data &&
+
                 
                 <form className="settings-form" onSubmit={handleForm}>
 
@@ -134,20 +83,62 @@ const Settings = (props) => {
                     <div className="settings-form-label">Trading Equity</div>
                     <input required className="settings-form-input" type="text" placeholder="trading equity" id="equity" name="equity" defaultValue={equity} />
 
-                    <div className="settings-form-label">Max Trade Position (%)</div>
-                    <input required className="settings-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={"10"}/>
+                    <div className="settings-form-label">Full Position (%)</div>
+                    <input required className="settings-form-input" type="text" placeholder="max position percent" id="position" name="full_position"  defaultValue={fullPosition}/>
                     
                     <div className="settings-form-label">Equity Risk (%)</div>
-                    <input required className="settings-form-input" type="text" placeholder="percent risk" id="riskpercent" name="risk_percent" defaultValue={riskPercent} />
+                    <input required className="settings-form-input" type="text" placeholder="percent risk" id="riskpercent" name="equity_risk" defaultValue={equityRisk} />
+
+                    <div className="settings-form-label">Max Stop Loss (%)</div>
+                    <input required className="settings-form-input" type="text" placeholder="max stop loss" id="entry" name="max_stoploss"  defaultValue={maxStoploss}/>
+
+                    {/* <div className="settings-form-label">Risk:Reward (1:x)</div>
+                    <input required className="settings-form-input" type="text" placeholder="Risk:Reward" id="entry" name="riskreward"  defaultValue={"auto"}/> */}
+
+                    <div>
+                        <div className="settings-form-label-flex">
+                        <div>Risk:Reward</div>
+                        <label className="switch">
+                            <input type="checkbox" checked={checked} onChange={handleCheckbox}/> 
+                            <span className="slider"></span>
+                        </label>     
+                        </div>
+                        {checked &&
+                            <input required className="settings-form-input" type="text" placeholder="Risk:Reward" id="risk_reward" name="risk_reward"  defaultValue={'automatic'}/>
+                        }
+                        {!checked &&
+                            <input required className="settings-form-input" type="text" placeholder="Risk:Reward" id="risk_reward" name="risk_reward"  defaultValue={riskReward}/>
+                        }                        
+                        
+                    </div>
 
 
+                    {/* {riskReward !== 0 &&
+                    <div>
+                        <div className="settings-form-label-flex">
+                        <div>Risk:Reward</div>
+                        <label className="switch">
+                            <input type="checkbox" checked={checked} onChange={handleCheckbox}/> 
+                            <span className="slider"></span>
+                        </label>     
+                        </div>
+                        <input required className="settings-form-input" type="text" placeholder="Risk:Reward" id="risk_reward" name="risk_reward"  defaultValue={riskReward}/>
+                    </div>
+                    }
+                    {riskReward === 0 &&
+                    <div>
+                        <div className="settings-form-label-flex">
+                        <div>Risk:Reward</div>
+                        <label className="switch">
+                            <input type="checkbox" checked={checked} onChange={handleCheckbox}/> 
+                            <span className="slider"></span>
+                        </label>     
+                        </div>
+                        <input required className="settings-form-input" type="text" placeholder="Risk:Reward" id="risk_reward" name="risk_reward"  value={'automatic'}/>
+                    </div>
+                    }                     */}
 
-                    <div className="settings-form-label">Max Trade Risk (%)</div>
-                    <input required className="settings-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={"8"}/>
-
-                    <div className="settings-form-label">Risk:Reward (1:x)</div>
-                    <input required className="settings-form-input" type="text" placeholder="entry price" id="entry" name="entry_price"  defaultValue={"auto"}/>
-
+       
 
 
                     <button className="settings-form-button">Save Settings</button>
@@ -156,7 +147,7 @@ const Settings = (props) => {
 
                     
                 </form>
-                }
+                
 
                 
 
