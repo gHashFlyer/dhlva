@@ -104,7 +104,7 @@ const Minervini = (props) => {
                 
 
     // }
-    if(respData && respData.topics){
+    if(respData && respData.technicals){
 
         mmt = <div className="mini-results_mmt">{respData.info.ticker}🛑</div>
         if(respData.technicals.mmt === 'yes'){
@@ -125,18 +125,7 @@ const Minervini = (props) => {
         }
 
 
-        // output = respData.topics.map((ele) => {
-        //     return(
-        //         <div className="mini-results-lower-row">
-        //             <div className="mini-results-lower-checkbox">
-        //             ✔️
-        //             {/* ❌ ✔️ 🛑 */}
-        //             </div>
-        //             <div className="mini-results-lower-topic">{ele.topic}</div>
-        //             <div className="mini-results-lower-value">{ele.days}</div>
-        //         </div>
-        //     )
-        // })
+
     }
     return(
     <React.Fragment>

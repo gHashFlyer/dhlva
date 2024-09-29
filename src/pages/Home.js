@@ -18,9 +18,6 @@ const Home = (props) => {
                         
                         <div className="home-settings">
                             <Link className="home-link" to="../settings">Settings</Link>
-
-
-                            {/* <button className="home-button">Settings</button> */}
                         </div>
 
                         

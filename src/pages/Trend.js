@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import {Link} from 'react-router-dom';
 //import {useNavigate} from 'react-router-dom';
 import axios from "axios";
 
@@ -55,6 +56,10 @@ const Trend = (props) => {
                     setRespData(response.data)
                     if(response.data){
                         console.log(response.data)
+                        if(response.data === 'no data?'){
+                            console.log("F")
+                        }
+
                         localStorage.setItem("data", JSON.stringify(response.data) );
                         //let obj = JSON.parse(response.data)
                     }else{
@@ -97,7 +102,7 @@ const Trend = (props) => {
         mmt = ""
     }
     
-    if(respData && respData.topics){
+    if(respData && respData.technicals){
 
         mmt = <div className="trend-results_mmt">🛑<p>undesirable trend</p></div>
         if(respData.technicals.mmt === 'yes'){
@@ -137,7 +142,10 @@ const Trend = (props) => {
                     {info}
                     <div className="trend-results-lower">
                         {mmt==='' && busy === false ? "NO DATA": mmt}
-                    </div>                
+                    </div>          
+
+                    {mmt!=='' && busy === false ? <div><Link className="trend-link" to="../chart">Chart</Link></div>: '---'}
+                    
                 </div>
 
             </div>

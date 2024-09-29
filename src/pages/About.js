@@ -55,8 +55,8 @@ const About = (props) => {
                 </div>                                      
 
                 <div className="about-item">
-                    <div className="about-item-symbol">Version 1.2</div>
-                     9/25/2024 by Garen Evans
+                    <div className="about-item-symbol">Version 1.3</div>
+                     9/29/2024 by Garen Evans
                 </div>                      
                 {/* <div className="about-version">
                     Version 1.0 by Garen Evans
