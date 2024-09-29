@@ -145,6 +145,7 @@ const Trend = (props) => {
                     </div>          
 
                     {mmt!=='' && busy === false ? <div><Link className="trend-link" to="../chart">Chart</Link></div>: '---'}
+                    {mmt!=='' && busy === false ? <div><Link className="trend-link" to="../techs">Technicals</Link></div>: '---'}
                     
                 </div>
 

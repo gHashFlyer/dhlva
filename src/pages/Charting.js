@@ -56,7 +56,13 @@ const Charting = (props) => {
             yaxis: {
               tooltip: {
                 enabled: true
-              }
+              },
+              labels: {
+                formatter: function(val) {
+                  return val.toFixed(0);
+                }
+              }              
+
             }            
           },          
           series: [{
