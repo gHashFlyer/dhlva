@@ -18,6 +18,9 @@ const PositionCalc = (props) => {
     const [stoplossPercent, setStoplossPercent] = useState(false)
     const [equityPercent, setEquityPercent] = useState(false)
     const [takeProfit, setTakeProfit] = useState(false)
+    const [takeProfitHalfATR, setTakeProfitHalfATR] = useState(false)
+    const [takeProfitFullATR, setTakeProfitFullATR] = useState(false)
+
     const [riskRewardRatio, setRiskRewardRatio] = useState(false)
 
     useEffect(() => {
@@ -113,12 +116,19 @@ const PositionCalc = (props) => {
             setTakeProfit(tp)            
         }
 
+        
+        setTakeProfitHalfATR( Math.round((price + 0.5 * data.technicals.atr)*100)/100 )
+        setTakeProfitFullATR( Math.round((price + 1.0 * data.technicals.atr)*100)/100 )
+        
+
+
     
         // calculate risk to reward ratio
         let risk = price - sl
         let reward = tp - price
         let rr = reward / risk
-        rr = Math.round(10 * rr) / 10
+        console.log(rr)
+        rr = Math.round(1000 * rr) / 1000
 
         setRiskRewardRatio(rr)
         setShares(snum)
@@ -160,8 +170,10 @@ const PositionCalc = (props) => {
                         <div>
                             <div className="poscalc-form-result">Shares: {shares} ({equityPercent}%)</div>
                             <div className="poscalc-form-result">S/L {stoploss}  ({stoplossPercent}%)</div>
-                            <div className="poscalc-form-result">T/P {takeProfit}</div>
-                            <div className="poscalc-form-result">RRR {riskRewardRatio}</div>
+                            <div className="poscalc-form-result">T/P {takeProfit} </div>
+                            <div className="poscalc-form-result">T/P<sub>atr</sub> {takeProfitHalfATR} | {takeProfitFullATR}</div>
+                            {/* <div className="poscalc-form-result">TP<sub><i>ATR</i></sub> {takeProfitHalfATR}, {takeProfitFullATR}</div> */}
+                            <div className="poscalc-form-result"> RR:{riskRewardRatio}  &nbsp; &nbsp;ATR: {Math.round(data.technicals.atr*1000)/1000}</div>
                         </div>
                     }
 

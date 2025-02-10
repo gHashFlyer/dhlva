@@ -50,13 +50,18 @@ const About = (props) => {
                         Take profit price, calculated at one percent of trading equity, or based on Risk:Reward, if set.
                 </div>                      
                 <div className="about-item">
-                    <div className="about-item-symbol">RRR</div>
+                    <div className="about-item-symbol">RR</div>
                     risk-to-reward ratio
+                </div>                                  
+                <div className="about-item">
+                    <div className="about-item-symbol">ATR</div>
+                        Average True Range, T/P half ATR, T/P full ATR
                 </div>                                      
+                    
 
                 <div className="about-item">
-                    <div className="about-item-symbol">Version 1.3</div>
-                     9/29/2024 by Garen Evans
+                    <div className="about-item-symbol">Version 1.4</div>
+                     10 Feb 2025 by Garen Evans
                 </div>                      
                 {/* <div className="about-version">
                     Version 1.0 by Garen Evans
